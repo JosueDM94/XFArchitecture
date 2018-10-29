@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XFArchitecture.Templates.TitleBarTemplate">
+    <ControlTemplate x:Key="TitleBar">
+        <Grid BackgroundColor="{TemplateBinding BindingContext.BarBackgroundColor}" ColumnSpacing="0" RowSpacing="0" HeightRequest="44" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>             
+            <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HeightRequest="28" WidthRequest="28" IsVisible="{TemplateBinding BindingContext.HasTitleIcon}" 
+                   Source="{TemplateBinding BindingContext.TitleIcon}" Aspect="AspectFit" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Grid.Row="0" Grid.Column="1" Text="{TemplateBinding BindingContext.TitleText}" BackgroundColor="Transparent" HeightRequest="44" WidthRequest="-1" 
+                   TextColor="{TemplateBinding BindingContext.TitleColor}" FontSize="16" FontAttributes="Bold" 
+                   VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasSubtitle}" Value="true">
+                        <Setter Property="HeightRequest" Value="22"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasTitleIcon}" Value="false">
+                        <DataTrigger.Setters>
+                            <Setter Property="Grid.Column" Value="0"/>
+                            <Setter Property="Grid.ColumnSpan" Value="1"/>
+                        </DataTrigger.Setters>                            
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="1" Text="{TemplateBinding BindingContext.SubtitleText}" IsVisible="{TemplateBinding BindingContext.HasSubtitle}" BackgroundColor="Transparent" 
+                   HeightRequest="22" WidthRequest="-1" TextColor="{TemplateBinding BindingContext.SubtitleColor}" FontSize="14" VerticalOptions="Center" HorizontalOptions="Center" 
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasTitleIcon}" Value="false">
+                        <DataTrigger.Setters>
+                            <Setter Property="Grid.Column" Value="0"/>
+                            <Setter Property="Grid.ColumnSpan" Value="1"/>
+                        </DataTrigger.Setters>
+                    </DataTrigger>
+                </Label.Triggers>                    
+            </Label>            
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

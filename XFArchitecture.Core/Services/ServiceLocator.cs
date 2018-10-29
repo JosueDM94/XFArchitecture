@@ -4,6 +4,7 @@ using Autofac;
 
 using XFArchitecture.Core.ViewModels.Home;
 using XFArchitecture.Core.Services.General;
+using XFArchitecture.Core.ViewModels.Login;
 using XFArchitecture.Core.Contracts.General;
 using XFArchitecture.Core.Services.Database;
 using XFArchitecture.Core.Contracts.Database;
@@ -24,6 +25,8 @@ namespace XFArchitecture.Core.Services
 
             //ViewModels
             containerBuilder.RegisterType<HomeViewModel>();
+            containerBuilder.RegisterType<LoginViewModel>();
+            containerBuilder.RegisterType<ViewModels.User.Register.RegisterViewModel>();
 
             //Services
             containerBuilder.RegisterType<DialogService>().As<IDialogService>();
@@ -41,6 +44,6 @@ namespace XFArchitecture.Core.Services
 
         public void Register<T>() where T : class => containerBuilder.RegisterType<T>();
 
-        public void Register<TInterface, TImplementation>() where TImplementation : TInterface => containerBuilder.RegisterType<TImplementation>().As<TInterface>();
+        public void Register<TImplementation, TInterface>() where TImplementation : TInterface => containerBuilder.RegisterType<TImplementation>().As<TInterface>();
     }
 }

@@ -55,7 +55,7 @@ namespace XFArchitecture.Core.ViewModels.Home
         public async void AddUserCommand()
         {
             Loading.Show();
-            await Database.InsertUser(new User() { Name = Name });
+            //await Database.InsertUser(new User() { Name = Name });
             var users = await Database.Select();
             ShowToast(users.Count.ToString());
             Loading.Hide();
@@ -63,14 +63,14 @@ namespace XFArchitecture.Core.ViewModels.Home
 
         public async void DeleteUserCommand()
         {
-            await Database.DeleteUser(new User() { Id=Id, Name = Name });
+            //await Database.DeleteUser(new User() { Id=Id, Name = Name });
             var users = await Database.Select();
             ShowToast(users.Count.ToString());
         }
 
         public async void UpdateUserCommand()
         {
-            await Database.UpdateUser(new User() { Id = Id, Name = Name });
+            // Database.UpdateUser(new User() { Id = Id, Name = Name });
             var users = await Database.Select();
             ShowToast(users.Count.ToString());
         }

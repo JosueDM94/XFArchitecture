@@ -24,10 +24,7 @@ namespace XFArchitecture.Services
 
         private static void OnAutoWireViewModelChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (!(bindable is Element view))
-            {
-                return;
-            }
+            if (!(bindable is Element view)) return;
 
             var viewType = view.GetType();
             if (viewType.FullName != null)
@@ -35,12 +32,8 @@ namespace XFArchitecture.Services
                 var viewName = viewType.FullName.Replace(".Views.", ".Core.ViewModels.").Replace("Page", "View");
                 var viewAssemblyName = viewType.GetTypeInfo().Assembly.FullName.Replace("XFArchitecture", "XFArchitecture.Core");
                 var viewModelName = string.Format(CultureInfo.InvariantCulture, "{0}Model, {1}", viewName, viewAssemblyName);
-
                 var viewModelType = Type.GetType(viewModelName);
-                if (viewModelType == null)
-                {
-                    return;
-                }
+                if (viewModelType == null) return;
                 var viewModel = ServiceLocator.Instance.Resolve(viewModelType);
                 view.BindingContext = viewModel;
             }

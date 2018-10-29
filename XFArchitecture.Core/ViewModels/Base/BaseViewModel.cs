@@ -10,6 +10,7 @@ using XFArchitecture.Core.Utilities;
 using XFArchitecture.Core.Contracts.General;
 using XFArchitecture.Core.Contracts.Database;
 using XFArchitecture.Core.Contracts.Repository;
+using Xamarin.Essentials;
 
 namespace XFArchitecture.Core.ViewModels
 {
@@ -22,16 +23,34 @@ namespace XFArchitecture.Core.ViewModels
         protected IDatabaseService Database { get; set; }
         protected IRepositoryService Repository { get; set; }
         protected IMainThreadService MainThread { get; set; }
+        protected INavigationService Navigation { get; set; }
 
         public BaseViewModel()
         {
-            TaskFactory = new TaskFactory();
+            InitializeElements();
+            InitializeInstances();
+        }
+
+        public virtual Task InitializeAsync(object parameters)
+        {
+            return Task.FromResult(true);
+        }
+
+        private void InitializeInstances()
+        {
             Dialog = ServiceLocator.Instance.Resolve<IDialogService>();
             Loading = ServiceLocator.Instance.Resolve<ILoadingService>();
             Network = ServiceLocator.Instance.Resolve<INetworkService>();
             Database = ServiceLocator.Instance.Resolve<IDatabaseService>();
             Repository = ServiceLocator.Instance.Resolve<IRepositoryService>();
             MainThread = ServiceLocator.Instance.Resolve<IMainThreadService>();
+            Navigation = ServiceLocator.Instance.Resolve<INavigationService>();
+        }
+
+        private void InitializeElements()
+        {
+            TaskFactory = new TaskFactory();
+            Constants.DeviceOS = DeviceInfo.Platform;
         }
 
         protected bool CheckInternet()

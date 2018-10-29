@@ -5,13 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace XFArchitecture.Core.Models
 {
-    public class School
+    public class Grade : BaseEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
 
-        public List<User> Users { get; set; }
+        public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
     }
 }

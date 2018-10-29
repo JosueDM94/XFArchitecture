@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Base:BasePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:Services="clr-namespace:XFArchitecture.Services"
+    xmlns:Control="clr-namespace:XFArchitecture.Controls"
+    xmlns:Base="clr-namespace:XFArchitecture.Views.Base"
+    xmlns:Effect="clr-namespace:XFArchitecture.Effects"
+    Services:ViewModelLocator.AutoWireViewModel="True"
+    x:Class="XFArchitecture.Views.Login.LoginPage">
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="-1" WidthRequest="-1" BackgroundColor="White">            
+            <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0.5,115,280,300" AbsoluteLayout.LayoutFlags="XProportional" Spacing="0" BackgroundColor="Transparent" Padding="15,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout.Effects>
+                    <Effect:BorderEffect BorderWidth="2" BorderRadius="10" BorderColor="#7f8C8D"/>
+                </StackLayout.Effects>                
+                <Label Text="Sign in" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="0,35,0,6"/>
+                <StackLayout Orientation="Horizontal" HeightRequest="48" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,4" Spacing="0" Padding="3,6">
+                    <StackLayout.Effects>
+                        <Effect:BorderEffect BorderColor="Silver" BorderWidth="2" BorderRadius="10"/>
+                    </StackLayout.Effects>    
+                    <Image Source="ic_user" Aspect="AspectFit" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,3,0"/>
+                    <Entry Placeholder="Username" FontSize="15" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                        <Entry.Effects>
+                            <Effect:BorderEffect BorderColor="Transparent"/>
+                        </Entry.Effects>
+                    </Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HeightRequest="48" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,4" Spacing="0" Padding="3,6">
+                    <StackLayout.Effects>
+                        <Effect:BorderEffect BorderColor="Silver" BorderWidth="2" BorderRadius="10"/>
+                    </StackLayout.Effects>                    
+                    <Image Source="ic_password" Aspect="AspectFit" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,3,0"/>
+                    <Entry Placeholder="Password" FontSize="15" IsPassword="true" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                        <Entry.Effects>
+                            <Effect:BorderEffect BorderColor="Transparent"/>
+                        </Entry.Effects>
+                    </Entry>
+                </StackLayout>
+                <Button Text="LOGIN" TextColor="White" FontAttributes="Bold" BackgroundColor="#2980B9" Margin="0,12,0,6" HeightRequest="48" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BorderWidth="2" BorderRadius="8" BorderColor="#2980B9"/>                    
+                <StackLayout Orientation="Horizontal" HeightRequest="-1" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,4,0,8" Spacing="0">
+                    <Control:CheckBox WidthRequest="20" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,4,0">
+                        <Control:CheckBox.Effects>
+                            <Effect:TintColorEffect TintColor="#2980B9"/>
+                        </Control:CheckBox.Effects>
+                    </Control:CheckBox>
+                    <Label Text="Remember me" FontSize="13" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start" HeightRequest="28" WidthRequest="-1"/>
+                    <Label Text="Forget password?" FontSize="13" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" HeightRequest="-1" WidthRequest="-1"/>
+                </StackLayout>
+            </StackLayout>
+            <Lottie:AnimationView Animation="Animations/anim_login.json" Loop="True" AutoPlay="True" Speed="0.35" AbsoluteLayout.LayoutBounds="0.5,80,70,70" AbsoluteLayout.LayoutFlags="XProportional"/>
+            <BoxView BackgroundColor="#2980B9" AbsoluteLayout.LayoutBounds="0.5,450,300,2" AbsoluteLayout.LayoutFlags="XProportional"/>
+            <Label AbsoluteLayout.LayoutBounds="0.5,460,300,AutoSize" AbsoluteLayout.LayoutFlags="XProportional" HeightRequest="-1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Don't have an account?" TextColor="Black" FontSize="13"/>
+                            <Span Text=" REGISTER HERE" TextColor="Black" FontAttributes="Bold" FontSize="13">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding GoToRegisterCommand}"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString.Spans>                        
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</Base:BasePage>

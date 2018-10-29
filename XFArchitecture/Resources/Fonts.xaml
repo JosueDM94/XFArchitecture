@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XFArchitecture.Resources.Fonts">
+    <OnPlatform x:TypeArguments="x:String" x:Key="FASolid">
+        <On Platform="iOS">FontAwesome5FreeSolid</On>
+        <On Platform="Android">Fonts/fa-solid-900.ttf#Font Awesome 5 Free Solid</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="FARegular">
+        <On Platform="iOS">FontAwesome5FreeRegular</On>
+        <On Platform="Android">Fonts/fa-regular-400.ttf#Font Awesome 5 Free Regular</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="FABrands">
+        <On Platform="iOS">FontAwesome5BrandsRegular</On>
+        <On Platform="Android">Fonts/fa-brands-400.ttf#Font Awesome 5 Brands Regular</On>        
+    </OnPlatform>
+</ResourceDictionary>

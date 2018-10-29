@@ -1,5 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XFArchitecture.App">
+<?xml version="1.0" encoding="utf-8"?>
+<Application 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Resource="clr-namespace:XFArchitecture.Resources"
+    xmlns:Template="clr-namespace:XFArchitecture.Templates"
+    x:Class="XFArchitecture.App">
     <Application.Resources>
+        <!--Application Resource Dictonary-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--FONTS-->
+                <Resource:Fonts/>
+                <!--COLORS-->
+                <Resource:Colors/>
+                <!--STYLES-->
+                <Resource:Styles/>
+                <!--STRINGS-->
+                <Resource:Strings/>
+                <!--TEMPLATES-->
+                <Resource:Templates/>
+                <Template:BackBarTemplate/>
+                <Template:MenuBarTemplate/>
+                <Template:TitleBarTemplate/>
+                <Template:CustomBarTemplate/>                
+                <!--DIMENSIONS-->
+                <Resource:Dimensions/>
+                <!--CONVERTERS-->
+                <Resource:Converters/>                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

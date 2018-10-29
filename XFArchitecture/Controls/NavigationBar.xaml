@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XFArchitecture.Controls.NavigationBar"
+    x:Name="NavigationBarContext">
+    <ContentView.Content>
+        <StackLayout Orientation="Vertical" Spacing="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" WidthRequest="-1" HeightRequest="-1">
+            <BoxView BindingContext="{Binding Source={x:Reference Name=NavigationBarContext}}" HeightRequest="{Binding StatusHeight}" BackgroundColor="{Binding StatusBackgroundColor}" WidthRequest="-1" VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+            <ContentView BindingContext="{Binding Source={x:Reference Name=NavigationBarContext}}" ControlTemplate="{Binding NavigationBarStyle, Converter={StaticResource StyleTemplate}}" HeightRequest="44" WidthRequest="-1"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

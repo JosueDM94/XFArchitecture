@@ -14,36 +14,38 @@ namespace XFArchitecture.Core.Services.Database.Context
         private string DatabasePath;
 
         public DbSet<User> Users { get; set; }
-        public DbSet<School> Schools { get; set; }
-        public DbSet<Student> Students { get; set; }
+        public DbSet<Grade> Grades { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<CourseUser> Instructors { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
 
         public BaseContext()
         {
+            Database.EnsureCreated();
+            Database.Migrate();
+            PragmaProperties();
         }
 
         public BaseContext(DbContextOptions options) : base(options) 
         {
+            Database.EnsureCreated();
+            Database.Migrate();
+            PragmaProperties();
         }
 
-        public static BaseContext Create()
+        private void PragmaProperties()
         {
-            BaseContext context = new BaseContext();
-            context.Database.EnsureCreated();
-            context.Database.Migrate();
-            PragmaProperties(context);
-            return context;
-        }
-
-        private static async void PragmaProperties(BaseContext context)
-        {
-            var connection = context.Database.GetDbConnection();
-            await connection.OpenAsync();
-            using (var command = connection.CreateCommand())
+            using (var connection = Database.GetDbConnection())
             {
-                command.CommandText = "PRAGMA journal_mode=WAL;";
-                command.CommandText = "PRAGMA temp_store=MEMORY;";
-                command.CommandText = "PRAGMA synchronous=OFF;";
-                await command.ExecuteNonQueryAsync();
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "PRAGMA journal_mode=WAL;";
+                    command.CommandText = "PRAGMA temp_store=MEMORY;";
+                    command.CommandText = "PRAGMA synchronous=OFF;";
+                    command.ExecuteNonQuery();
+                }
             }
         }
 
@@ -66,8 +68,11 @@ namespace XFArchitecture.Core.Services.Database.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().ToTable(nameof(User));
-            modelBuilder.Entity<School>().ToTable(nameof(School));
-            modelBuilder.Entity<Student>().ToTable(nameof(Student));
+            modelBuilder.Entity<Grade>().ToTable(nameof(Grade));
+            modelBuilder.Entity<Course>().ToTable(nameof(Course));
+            modelBuilder.Entity<CourseUser>().ToTable(nameof(CourseUser));
+            modelBuilder.Entity<Attendance>().ToTable(nameof(Attendance));
+            modelBuilder.Entity<Enrollment>().ToTable(nameof(Enrollment));
         }
     }
 }

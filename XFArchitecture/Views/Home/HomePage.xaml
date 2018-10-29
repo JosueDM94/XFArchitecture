@@ -7,23 +7,6 @@
     Services:ViewModelLocator.AutoWireViewModel="True"
     x:Class="XFArchitecture.Views.Home.HomePage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="0">
-            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="7*"/>
-                </Grid.ColumnDefinitions>                
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Title}"/>
-                <Entry Grid.Row="1" Grid.Column="0" Placeholder="Id" Text="{Binding Id, Mode=TwoWay}"/>
-                <Entry Grid.Row="1" Grid.Column="1" Placeholder="Keyboard" Text="{Binding Name, Mode=TwoWay}"/>
-            </Grid>
-            <Button Text="Add" Command="{Binding AddUser}"/>
-            <Button Text="Delete" Command="{Binding DeleteUser}"/>
-            <Button Text="Update" Command="{Binding UpdateUser}"/>
-        </StackLayout>
+        
     </ContentPage.Content>
 </Base:BasePage>

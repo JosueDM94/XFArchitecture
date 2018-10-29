@@ -4,8 +4,10 @@ using XFArchitecture.Core.Models;
 
 namespace XFArchitecture.Core.Services.Database.Consumer
 {
-    public class SchoolConsumer : BaseConsumer<School>
+    public class EnrollmentConsumer : BaseConsumer<Enrollment>
     {
-
+        public EnrollmentConsumer()
+        {
+        }
     }
 }

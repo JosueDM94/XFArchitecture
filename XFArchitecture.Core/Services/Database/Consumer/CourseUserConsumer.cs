@@ -4,8 +4,7 @@ using XFArchitecture.Core.Models;
 
 namespace XFArchitecture.Core.Services.Database.Consumer
 {
-    public class StudentConsumer : BaseConsumer<Student>
+    public class CourseUserConsumer : BaseConsumer<CourseUser>
     {
-
     }
 }

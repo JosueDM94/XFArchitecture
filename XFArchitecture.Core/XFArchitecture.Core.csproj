@@ -7,9 +7,9 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
-    <PackageReference Include="Microsoft.AppCenter" Version="1.9.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.9.0" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.9.0" />
+    <PackageReference Include="Microsoft.AppCenter" Version="1.10.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.10.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.10.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
     <PackageReference Include="Xamarin.Essentials" Version="0.11.0-preview" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
@@ -25,7 +25,6 @@
     <Folder Include="Contracts\Repository\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Enums\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
@@ -40,8 +39,13 @@
     <Folder Include="Services\Database\Context\" />
     <Folder Include="Services\Repository\Consumer\" />
     <Folder Include="Services\Database\Consumer\Base\" />
+    <Folder Include="ViewModels\Login\" />
+    <Folder Include="ViewModels\User\" />
+    <Folder Include="ViewModels\User\Register\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Services\Dependency\IKeyboardService.cs" />
+    <Compile Remove="Enums\DeviceType.cs" />
+    <Compile Remove="Services\Database\Consumer\InstructorConsumer" />
   </ItemGroup>
 </Project>

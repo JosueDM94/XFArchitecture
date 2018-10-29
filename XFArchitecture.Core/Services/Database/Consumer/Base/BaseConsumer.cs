@@ -12,7 +12,7 @@ namespace XFArchitecture.Core.Services.Database.Consumer
         protected BaseContext context;
         public BaseConsumer()
         {
-            context = BaseContext.Create();
+            context = new BaseContext();
         }
 
         protected async Task<bool> UpdateRow(T item)

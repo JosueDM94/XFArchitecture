@@ -10,10 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.2.0.871581" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.9.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.9.0" />
-    <PackageReference Include="Microsoft.AppCenter" Version="1.9.0" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.10.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.10.0" />
+    <PackageReference Include="Microsoft.AppCenter" Version="1.10.0" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.6.3" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XFArchitecture.Core\XFArchitecture.Core.csproj" />
@@ -25,5 +27,34 @@
     <Folder Include="Services\General\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Attendance\" />
+    <Folder Include="Views\Enrollment\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Course\" />
+    <Folder Include="Views\Course\Register\" />
+    <Folder Include="Views\User\Register\" />
+    <Folder Include="Effects\" />
+    <Folder Include="Renderers\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Templates\" />
+    <Folder Include="Services\Dependency\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Animations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\User\Register\RegisterUserPage.xaml.cs" />
+    <Compile Remove="Controls\CheckBox.xaml.cs" />
+    <Compile Remove="Controls\BottomView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Splash\SplashPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
