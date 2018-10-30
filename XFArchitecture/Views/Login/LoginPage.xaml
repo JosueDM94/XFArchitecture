@@ -20,7 +20,8 @@
                     <StackLayout.Effects>
                         <Effect:BorderEffect BorderColor="Silver" BorderWidth="2" BorderRadius="10"/>
                     </StackLayout.Effects>    
-                    <Image Source="ic_user" Aspect="AspectFit" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,3,0"/>
+                    <Label Text="{StaticResource User}" FontFamily="{StaticResource FASolid}" TextColor="{StaticResource DarkGray}" FontSize="18" HeightRequest="24" WidthRequest="24"
+                           VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="0,0,3,0"/>
                     <Entry Placeholder="Username" FontSize="15" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
                         <Entry.Effects>
                             <Effect:BorderEffect BorderColor="Transparent"/>
@@ -31,7 +32,8 @@
                     <StackLayout.Effects>
                         <Effect:BorderEffect BorderColor="Silver" BorderWidth="2" BorderRadius="10"/>
                     </StackLayout.Effects>                    
-                    <Image Source="ic_password" Aspect="AspectFit" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,3,0"/>
+                    <Label Text="{StaticResource Lock}" FontFamily="{StaticResource FASolid}" TextColor="{StaticResource DarkGray}" FontSize="18" HeightRequest="24" WidthRequest="24"
+                           VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="0,0,3,0"/>
                     <Entry Placeholder="Password" FontSize="15" IsPassword="true" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
                         <Entry.Effects>
                             <Effect:BorderEffect BorderColor="Transparent"/>

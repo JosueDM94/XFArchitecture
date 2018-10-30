@@ -127,16 +127,9 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\drawable\ic_save.png" />
-    <AndroidResource Include="Resources\drawable\ic_password.png" />
-    <AndroidResource Include="Resources\drawable\ic_user.png" />
     <AndroidResource Include="Resources\drawable\ic_checkbox_unchecked.png" />
     <AndroidResource Include="Resources\drawable\ic_checkbox_checked.png" />
     <AndroidResource Include="Resources\drawable\im_school.png" />
-    <AndroidResource Include="Resources\drawable\ic_menu.png" />
-    <AndroidResource Include="Resources\drawable\ic_forward.png" />
-    <AndroidResource Include="Resources\drawable\ic_back.png" />
-    <AndroidResource Include="Resources\drawable\ic_search.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

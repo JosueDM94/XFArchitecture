@@ -52,21 +52,21 @@ namespace XFArchitecture.Controls
             set { SetValue(SearchCommandProperty, value); }
         }
 
-        public static readonly BindableProperty StatusBackgroundColorProperty = BindableProperty.Create(nameof(StatusBackgroundColor), typeof(Color), typeof(NavigationBar), Color.FromHex("#1976D2"), BindingMode.TwoWay);
+        public static readonly BindableProperty StatusBackgroundColorProperty = BindableProperty.Create(nameof(StatusBackgroundColor), typeof(Color), typeof(NavigationBar), Application.Current.Resources["ColorPrimary"], BindingMode.TwoWay);
         public Color StatusBackgroundColor
         {
             get { return (Color)GetValue(StatusBackgroundColorProperty); }
             set { SetValue(StatusBackgroundColorProperty, value); }
         }
 
-        public static readonly BindableProperty BarBackgroundColorProperty = BindableProperty.Create(nameof(BarBackgroundColor), typeof(Color), typeof(NavigationBar), Color.FromHex("#2196F3"), BindingMode.TwoWay);
+        public static readonly BindableProperty BarBackgroundColorProperty = BindableProperty.Create(nameof(BarBackgroundColor), typeof(Color), typeof(NavigationBar), Application.Current.Resources["ColorPrimaryDark"], BindingMode.TwoWay);
         public Color BarBackgroundColor
         {
             get { return (Color)GetValue(BarBackgroundColorProperty); }
             set { SetValue(BarBackgroundColorProperty, value); }
         }
 
-        public static readonly BindableProperty LeftIconProperty = BindableProperty.Create(nameof(LeftIcon), typeof(string), typeof(NavigationBar), "ic_back", BindingMode.TwoWay);
+        public static readonly BindableProperty LeftIconProperty = BindableProperty.Create(nameof(LeftIcon), typeof(string), typeof(NavigationBar), Application.Current.Resources["Back"], BindingMode.TwoWay);
         public string LeftIcon
         {
             get { return (string)GetValue(LeftIconProperty); }
@@ -122,6 +122,13 @@ namespace XFArchitecture.Controls
             set { SetValue(SubtitleColorProperty, value); }
         }
 
+        public static readonly BindableProperty HasTitleProperty = BindableProperty.Create(nameof(HasTitle), typeof(bool), typeof(NavigationBar), true, BindingMode.TwoWay);
+        public bool HasTitle
+        {
+            get { return (bool)GetValue(HasTitleProperty); }
+            set { SetValue(HasTitleProperty, value); }
+        }
+
         public static readonly BindableProperty HasTitleIconProperty = BindableProperty.Create(nameof(HasTitleIcon), typeof(bool), typeof(NavigationBar), false, BindingMode.TwoWay);
         public bool HasTitleIcon
         {
@@ -167,7 +174,7 @@ namespace XFArchitecture.Controls
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    StatusHeight = DependencyService.Get<IDeviceService>().SafeArea() ? 34 : 20;
+                    StatusHeight = DependencyService.Get<IDeviceService>().SafeArea() ? 40 : 20;
                     break;
                 default:
                     StatusHeight = 0;

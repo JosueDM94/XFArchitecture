@@ -9,8 +9,8 @@
     Services:ViewModelLocator.AutoWireViewModel="True">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Spacing="0" HeightRequest="-1" WidthRequest="-1" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Control:NavigationBar NavigationBarStyle="SearchBar" LeftCommand="{Binding GoBack}"/>
-            <Entry Placeholder="&#xf0c7; Search" FontFamily="{StaticResource FARegular}"/>
+            <Control:NavigationBar NavigationBarStyle="CustomBar" LeftCommand="{Binding GoBack}" HasTitle="true" HasSubtitle="false" HasTitleIcon="true" HasBackButton="true" HasRightButtons="Two"
+                                   TitleIcon="ic_checkbox_checked" SubtitleText="Hello World!" LeftIcon="{StaticResource Menu}" RightTwoIcon="{StaticResource Search}" RightOneIcon="{StaticResource Save}"/>
         </StackLayout>
     </ContentPage.Content>
 </Base:BasePage>

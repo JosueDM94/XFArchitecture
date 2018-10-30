@@ -14,15 +14,16 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="44"/>
             </Grid.ColumnDefinitions>                
-            <Button Grid.Row="0" Grid.Column="0" Image="ic_back" BackgroundColor="Transparent" HeightRequest="44" WidthRequest="44" 
-                    Command="{TemplateBinding BindingContext.LeftCommand}" IsVisible="{TemplateBinding BindingContext.HasBackButton}">
+            <Button Grid.Row="0" Grid.Column="0" Text="{StaticResource Back}" FontSize="18" TextColor="White" FontFamily="{StaticResource FASolid}" BackgroundColor="Transparent"
+                    HeightRequest="44" WidthRequest="44" Command="{TemplateBinding BindingContext.LeftCommand}" IsVisible="{TemplateBinding BindingContext.HasBackButton}">
                 <Button.Triggers>
                     <DataTrigger TargetType="Button" Binding="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}" Value="true">
                         <Setter Property="IsVisible" Value="false"/>
                     </DataTrigger>
                 </Button.Triggers>
             </Button>
-            <Button Grid.Row="0" Grid.Column="0" Image="ic_back" BackgroundColor="Transparent" HeightRequest="44" WidthRequest="44" Clicked="SearchVisible_Clicked" IsVisible="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}"/>
+            <Button Grid.Row="0" Grid.Column="0" Text="&#xf053;" FontSize="18" TextColor="White" FontFamily="{StaticResource FASolid}" BackgroundColor="Transparent"
+                    HeightRequest="44" WidthRequest="44" Clicked="SearchVisible_Clicked" IsVisible="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}"/>
             <Grid Grid.Row="0" Grid.Column="1" ColumnSpacing="0" RowSpacing="0" Padding="0" Margin="0" HeightRequest="44" WidthRequest="-1"
                   VerticalOptions="Center" HorizontalOptions="Center">
                 <Grid.RowDefinitions>
@@ -39,9 +40,18 @@
                     </DataTrigger>
                 </Grid.Triggers>
                 <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HeightRequest="28" WidthRequest="28" IsVisible="{TemplateBinding BindingContext.HasTitleIcon}"
-                       Source="{TemplateBinding BindingContext.TitleIcon}" Aspect="AspectFit" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center"/>
+                       Source="{TemplateBinding BindingContext.TitleIcon}" Aspect="AspectFit" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image.Triggers>
+                        <DataTrigger TargetType="Image" Binding="{TemplateBinding BindingContext.HasTitle}" Value="false">
+                            <DataTrigger.Setters>
+                                <Setter Property="Grid.ColumnSpan" Value="1"/>
+                                <Setter Property="Grid.HeightRequest" Value="44"/>
+                            </DataTrigger.Setters>
+                        </DataTrigger>
+                    </Image.Triggers>
+                </Image>
                 <Label Grid.Row="0" Grid.Column="1" Text="{TemplateBinding BindingContext.TitleText}" BackgroundColor="Transparent" HeightRequest="44" WidthRequest="-1" 
-                       TextColor="{TemplateBinding BindingContext.TitleColor}" FontSize="16" FontAttributes="Bold" 
+                       TextColor="{TemplateBinding BindingContext.TitleColor}" FontSize="16" FontAttributes="Bold" IsVisible="{TemplateBinding BindingContext.HasTitle}"
                        VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
                     <Label.Triggers>
                         <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasSubtitle}" Value="true">
@@ -55,8 +65,8 @@
                         </DataTrigger>
                     </Label.Triggers>
                 </Label>
-                <Label Grid.Row="1" Grid.Column="1" Text="{TemplateBinding BindingContext.SubtitleText}" IsVisible="{TemplateBinding BindingContext.HasSubtitle}" BackgroundColor="Transparent" 
-                       HeightRequest="22" WidthRequest="-1" TextColor="{TemplateBinding BindingContext.SubtitleColor}" FontSize="14" 
+                <Label Grid.Row="1" Grid.Column="1" Text="{TemplateBinding BindingContext.SubtitleText}" BackgroundColor="Transparent" 
+                       HeightRequest="22" WidthRequest="-1" TextColor="{TemplateBinding BindingContext.SubtitleColor}" FontSize="14" IsVisible="false"
                        VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
                     <Label.Triggers>
                         <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasTitleIcon}" Value="false">
@@ -65,17 +75,26 @@
                                 <Setter Property="Grid.ColumnSpan" Value="1"/>
                             </DataTrigger.Setters>
                         </DataTrigger>
-                    </Label.Triggers>                    
+                        <MultiTrigger TargetType="Label">
+                            <MultiTrigger.Conditions>
+                                <BindingCondition Binding="{TemplateBinding BindingContext.HasTitle}" Value="true"/>
+                                <BindingCondition Binding="{TemplateBinding BindingContext.HasSubtitle}" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="IsVisible" Value="true"/>
+                        </MultiTrigger>
+                    </Label.Triggers>
                 </Label>
             </Grid>
-            <Button Grid.Row="0" Grid.Column="2" Image="ic_search" BackgroundColor="Transparent" HeightRequest="44" WidthRequest="44" Clicked="SearchVisible_Clicked">
+            <Button Grid.Row="0" Grid.Column="2" Text="{StaticResource Search}" TextColor="White" FontSize="18" FontFamily="{StaticResource FASolid}"
+                    BackgroundColor="Transparent" HeightRequest="44" WidthRequest="44" Clicked="SearchVisible_Clicked">
                 <Button.Triggers>
                     <DataTrigger TargetType="Button" Binding="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}" Value="true">
                         <Setter Property="IsVisible" Value="false"/>
                     </DataTrigger>
                 </Button.Triggers>
             </Button>
-            <SearchBar Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" SearchCommand="{TemplateBinding BindingContext.SearchCommand}" IsVisible="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}" BackgroundColor="Transparent" TextColor="{StaticResource ColorPrimary}" CancelButtonColor="White"/>
+            <SearchBar Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" SearchCommand="{TemplateBinding BindingContext.SearchCommand}" CancelButtonColor="White"
+                       IsVisible="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}" BackgroundColor="Transparent" TextColor="{StaticResource ColorPrimary}"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

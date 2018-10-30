@@ -14,7 +14,6 @@ namespace XFArchitecture.Converters
             if (value != null)
             {
                 var position = GetParameter(parameter);
-                Console.WriteLine(position);
                 if (value is RightButtons rightButtons)
                 {
                     switch(rightButtons)

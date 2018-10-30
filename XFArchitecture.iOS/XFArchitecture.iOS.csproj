@@ -215,18 +215,11 @@
     <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ic_save.png" />
-    <BundleResource Include="Resources\ic_password.png" />
-    <BundleResource Include="Resources\ic_user.png" />
     <BundleResource Include="Resources\Animations\anim_bus.json" />
     <BundleResource Include="Resources\Animations\anim_login.json" />
     <BundleResource Include="Resources\ic_checkbox_unchecked.png" />
     <BundleResource Include="Resources\ic_checkbox_checked.png" />
     <BundleResource Include="Resources\im_school.png" />
-    <BundleResource Include="Resources\ic_menu.png" />
-    <BundleResource Include="Resources\ic_forward.png" />
-    <BundleResource Include="Resources\ic_back.png" />
-    <BundleResource Include="Resources\ic_search.png" />
     <BundleResource Include="Resources\Fonts\fa-brands-400.ttf" />
     <BundleResource Include="Resources\Fonts\fa-regular-400.ttf" />
     <BundleResource Include="Resources\Fonts\fa-solid-900.ttf" />

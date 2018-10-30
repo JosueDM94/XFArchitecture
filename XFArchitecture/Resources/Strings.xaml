@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ResourceDictionary 
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="XFArchitecture.Resources.Strings">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XFArchitecture.Resources.Strings">    
+    <x:String x:Key="User">&#xf007;</x:String>
+    <x:String x:Key="Lock">&#xf023;</x:String>
+    <x:String x:Key="Back">&#xf053;</x:String>
+    <x:String x:Key="Plus">&#xf067;</x:String>
+    <x:String x:Key="Save">&#xf0c7;</x:String>
+    <x:String x:Key="Menu">&#xf0c9;</x:String>
+    <x:String x:Key="Close">&#xf057;</x:String>
+    <x:String x:Key="Search">&#xf002;</x:String>    
 </ResourceDictionary>

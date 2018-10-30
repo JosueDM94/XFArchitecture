@@ -4,7 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Converter="clr-namespace:XFArchitecture.Converters"
     x:Class="XFArchitecture.Resources.Converters">
+    <Converter:IsImageConverter x:Key="IsImage"/>
     <Converter:IsCenteredConverter x:Key="IsCentered"/>
-    <Converter:StyleTemplateConverter x:Key="StyleTemplate"/>
+    <Converter:IsSmallFontConverter x:Key="IsSmallFont"/>
+    <Converter:StyleTemplateConverter x:Key="StyleTemplate"/>    
     <Converter:VisibleRightButtonsConverter x:Key="VisibleRightButtons"/>
 </ResourceDictionary>
