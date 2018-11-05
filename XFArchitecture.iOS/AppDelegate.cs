@@ -5,6 +5,7 @@ using SQLitePCL;
 using Xamarin.Forms;
 using Lottie.Forms.iOS.Renderers;
 using Xamarin.Forms.Platform.iOS;
+using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Platform;
 
 using XFArchitecture.Core.Services;
@@ -24,6 +25,7 @@ namespace XFArchitecture.iOS
             Forms.Init();
             Batteries_V2.Init();
             CachedImageRenderer.Init();
+            CarouselViewRenderer.Init();
             AnimationViewRenderer.Init();
 
             RegisterDependencies();

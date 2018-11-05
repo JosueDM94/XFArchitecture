@@ -2,7 +2,7 @@
 
 namespace XFArchitecture.Templates
 {
-    public partial class TitleBarTemplate : ResourceDictionary
+    public partial class TitleBarTemplate : ContentView
     {
         public TitleBarTemplate()
         {

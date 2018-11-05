@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XFArchitecture.Views.User.Register.Content.StepTwoView"
+    xmlns:Effect="clr-namespace:XFArchitecture.Effects">
+    <ContentView.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="Country:"/>
+            <Entry Grid.Row="1" Grid.Column="0" Placeholder="Country"/>
+            <Label Grid.Row="2" Grid.Column="0" Text="State:"/>
+            <Entry Grid.Row="3" Grid.Column="0" Placeholder="state"/>
+            <Label Grid.Row="4" Grid.Column="0" Text="Zip Code:"/>
+            <Entry Grid.Row="5" Grid.Column="0" Placeholder="ZipCode"/>
+            <Label Grid.Row="6" Grid.Column="0" Text="Address:"/>
+            <Entry Grid.Row="7" Grid.Column="0" Placeholder="Address"/>
+            <Label Grid.Row="8" Grid.Column="0" Text="Ext Number:"/>
+            <Entry Grid.Row="9" Grid.Column="0" Placeholder="Ext Number"/>
+            <Label Grid.Row="8" Grid.Column="1" Text="Int Number:"/>
+            <Entry Grid.Row="9" Grid.Column="1" Placeholder="Int Number"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

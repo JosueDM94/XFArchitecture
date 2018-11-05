@@ -14,6 +14,13 @@ namespace XFArchitecture.Core.Utilities
         Female = 1
     }
 
+    public enum FontAwesomeType
+    {
+        Solid = 0,
+        Brands = 1,
+        Regular = 2
+    }
+
     public enum NavigationBarStyle
     {
         MenuBar = 0,

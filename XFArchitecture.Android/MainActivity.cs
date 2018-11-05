@@ -7,6 +7,7 @@ using Acr.UserDialogs;
 using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Platform;
 using Xamarin.Forms.Platform.Android;
+using CarouselView.FormsPlugin.Android;
 
 using XFArchitecture.Droid.Models;
 using XFArchitecture.Core.Services;
@@ -27,9 +28,11 @@ namespace XFArchitecture.Droid
 
             Forms.Init(this, savedInstanceState);
             UserDialogs.Init(this);
+            CarouselViewRenderer.Init();
             AnimationViewRenderer.Init();
             CachedImageRenderer.Init(false);
             AndroidEntity.Init(this, savedInstanceState);
+
             RegisterDependencies();
             LoadApplication(new App());
         }

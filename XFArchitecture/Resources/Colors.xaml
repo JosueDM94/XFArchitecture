@@ -4,7 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="XFArchitecture.Resources.Colors">
     
+    <Color x:Key="GreenA400">#00E676</Color>
+    <Color x:Key="GreenA700">#00C853</Color>
+    
     <Color x:Key="DarkGray">#7F8C8D</Color>
+    
+    <Color x:Key="Gray300">#E0E0E0</Color>
+    <Color x:Key="Gray400">#BDBDBD</Color>
+    <Color x:Key="Gray500">#9E9E9E</Color>
+    <Color x:Key="Gray600">#757575</Color>
+    <Color x:Key="Gray700">#616161</Color>
     
     <Color x:Key="ColorPrimary">#1976D2</Color>
     <Color x:Key="ColorAccent">Transparent</Color>

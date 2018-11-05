@@ -8,11 +8,20 @@ namespace XFArchitecture.Core.ViewModels.User.Register
 {
     public class RegisterViewModel : BaseViewModel
     {
+        private int position;
+        public int Position
+        {
+            get { return position; }
+            set { SetProperty(ref position, value); }
+        }
+
         public ICommand GoBack { get; private set; }
+        public ICommand SearchCommand { get; private set; }
 
         public RegisterViewModel()
         {
             GoBack = new Command(GoBackPage);
+            SearchCommand = new Command<string>(SearchAction);
         }
 
         public override Task InitializeAsync(object parameters)
@@ -23,6 +32,11 @@ namespace XFArchitecture.Core.ViewModels.User.Register
         public void GoBackPage()
         {
             Navigation.PopModalAsync(false);
+        }
+
+        public void SearchAction(string searchText)
+        {
+
         }
     }
 }

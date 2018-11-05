@@ -4,7 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:Template="clr-namespace:XFArchitecture.Templates"
     x:Class="XFArchitecture.Resources.Templates">
-    <ControlTemplate x:Key="SearchBar">
-        <Template:SearchBarTemplate/>
-    </ControlTemplate>
+    
+    <ControlTemplate x:Key="BackBar"><Template:BackBarTemplate/></ControlTemplate>
+    <ControlTemplate x:Key="MenuBar"><Template:MenuBarTemplate/></ControlTemplate>
+    <ControlTemplate x:Key="TitleBar"><Template:TitleBarTemplate/></ControlTemplate>
+    <ControlTemplate x:Key="CustomBar"><Template:CustomBarTemplate/></ControlTemplate>
+    <ControlTemplate x:Key="SearchBar"><Template:SearchBarTemplate/></ControlTemplate>
+    
 </ResourceDictionary>

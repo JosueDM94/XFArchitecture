@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XFArchitecture.Templates
 {
-    public partial class BackBarTemplate : ResourceDictionary
+    public partial class BackBarTemplate : ContentView
     {
         public BackBarTemplate()
         {

@@ -3,7 +3,6 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Resource="clr-namespace:XFArchitecture.Resources"
-    xmlns:Template="clr-namespace:XFArchitecture.Templates"
     x:Class="XFArchitecture.App">
     <Application.Resources>
         <!--Application Resource Dictonary-->
@@ -18,11 +17,7 @@
                 <!--STRINGS-->
                 <Resource:Strings/>
                 <!--TEMPLATES-->
-                <Resource:Templates/>
-                <Template:BackBarTemplate/>
-                <Template:MenuBarTemplate/>
-                <Template:TitleBarTemplate/>
-                <Template:CustomBarTemplate/>                
+                <Resource:Templates/>            
                 <!--DIMENSIONS-->
                 <Resource:Dimensions/>
                 <!--CONVERTERS-->

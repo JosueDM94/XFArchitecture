@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Base:BasePage 
+<Base:BasePage
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:CarouselView="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"    
+    xmlns:Indicator="clr-namespace:XFArchitecture.Views.User.Register.Indicator"
+    xmlns:Step="clr-namespace:XFArchitecture.Views.User.Register.Content"
     x:Class="XFArchitecture.Views.User.Register.RegisterPage"
-    xmlns:Services="clr-namespace:XFArchitecture.Services"
+    xmlns:Services="clr-namespace:XFArchitecture.Services"    
     xmlns:Control="clr-namespace:XFArchitecture.Controls"
     xmlns:Base="clr-namespace:XFArchitecture.Views.Base"    
     Services:ViewModelLocator.AutoWireViewModel="True">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Spacing="0" HeightRequest="-1" WidthRequest="-1" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Control:NavigationBar NavigationBarStyle="CustomBar" LeftCommand="{Binding GoBack}" HasTitle="true" HasSubtitle="false" HasTitleIcon="true" HasBackButton="true" HasRightButtons="Two"
+            <Control:NavigationBar NavigationBarStyle="SearchBar" LeftCommand="{Binding GoBack}" SearchCommand="{Binding SearchCommand}" HasTitle="true" HasSubtitle="false" HasTitleIcon="true" HasBackButton="true" HasRightButtons="Two"
                                    TitleIcon="ic_checkbox_checked" SubtitleText="Hello World!" LeftIcon="{StaticResource Menu}" RightTwoIcon="{StaticResource Search}" RightOneIcon="{StaticResource Save}"/>
+            <Indicator:RegisterIndicator Position="{Binding Position}" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <CarouselView:CarouselViewControl BindingContext="{Binding .}" Position="{Binding Position, Mode=TwoWay}" BackgroundColor="Transparent"
+                                              HeightRequest="-1" WidthRequest="-1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <CarouselView:CarouselViewControl.ItemsSource>
+                   <x:Array Type="{x:Type View}">
+                        <Step:StepOneView/>
+                        <Step:StepTwoView/>
+                        <Step:StepThreeView/>
+                   </x:Array>
+                </CarouselView:CarouselViewControl.ItemsSource>
+            </CarouselView:CarouselViewControl>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>    
 </Base:BasePage>

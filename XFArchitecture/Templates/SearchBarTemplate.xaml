@@ -3,9 +3,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="XFArchitecture.Templates.SearchBarTemplate"
+    xmlns:Effect="clr-namespace:XFArchitecture.Effects"
+    BindingContext="{TemplateBinding BindingContext}"
     x:Name="SearchBarContext">
-    <ContentView.Content>        
-        <Grid BackgroundColor="{TemplateBinding BindingContext.BarBackgroundColor}" ColumnSpacing="0" RowSpacing="0" HeightRequest="44" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+    <ContentView.Content>
+        <Grid BackgroundColor="{Binding BarBackgroundColor}" ColumnSpacing="0" RowSpacing="0" HeightRequest="44" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="44"/>
             </Grid.RowDefinitions>
@@ -15,14 +17,14 @@
                 <ColumnDefinition Width="44"/>
             </Grid.ColumnDefinitions>                
             <Button Grid.Row="0" Grid.Column="0" Text="{StaticResource Back}" FontSize="18" TextColor="White" FontFamily="{StaticResource FASolid}" BackgroundColor="Transparent"
-                    HeightRequest="44" WidthRequest="44" Command="{TemplateBinding BindingContext.LeftCommand}" IsVisible="{TemplateBinding BindingContext.HasBackButton}">
+                    HeightRequest="44" WidthRequest="44" Command="{Binding LeftCommand}" IsVisible="{Binding HasBackButton}">
                 <Button.Triggers>
                     <DataTrigger TargetType="Button" Binding="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}" Value="true">
                         <Setter Property="IsVisible" Value="false"/>
                     </DataTrigger>
                 </Button.Triggers>
             </Button>
-            <Button Grid.Row="0" Grid.Column="0" Text="&#xf053;" FontSize="18" TextColor="White" FontFamily="{StaticResource FASolid}" BackgroundColor="Transparent"
+            <Button Grid.Row="0" Grid.Column="0" Text="{StaticResource Back}" FontSize="18" TextColor="White" FontFamily="{StaticResource FASolid}" BackgroundColor="Transparent"
                     HeightRequest="44" WidthRequest="44" Clicked="SearchVisible_Clicked" IsVisible="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}"/>
             <Grid Grid.Row="0" Grid.Column="1" ColumnSpacing="0" RowSpacing="0" Padding="0" Margin="0" HeightRequest="44" WidthRequest="-1"
                   VerticalOptions="Center" HorizontalOptions="Center">
@@ -39,10 +41,10 @@
                         <Setter Property="IsVisible" Value="false"/>
                     </DataTrigger>
                 </Grid.Triggers>
-                <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HeightRequest="28" WidthRequest="28" IsVisible="{TemplateBinding BindingContext.HasTitleIcon}"
-                       Source="{TemplateBinding BindingContext.TitleIcon}" Aspect="AspectFit" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HeightRequest="28" WidthRequest="28" IsVisible="{Binding HasTitleIcon}"
+                       Source="{Binding TitleIcon}" Aspect="AspectFit" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center">
                     <Image.Triggers>
-                        <DataTrigger TargetType="Image" Binding="{TemplateBinding BindingContext.HasTitle}" Value="false">
+                        <DataTrigger TargetType="Image" Binding="{Binding HasTitle}" Value="false">
                             <DataTrigger.Setters>
                                 <Setter Property="Grid.ColumnSpan" Value="1"/>
                                 <Setter Property="Grid.HeightRequest" Value="44"/>
@@ -50,14 +52,14 @@
                         </DataTrigger>
                     </Image.Triggers>
                 </Image>
-                <Label Grid.Row="0" Grid.Column="1" Text="{TemplateBinding BindingContext.TitleText}" BackgroundColor="Transparent" HeightRequest="44" WidthRequest="-1" 
-                       TextColor="{TemplateBinding BindingContext.TitleColor}" FontSize="16" FontAttributes="Bold" IsVisible="{TemplateBinding BindingContext.HasTitle}"
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding TitleText}" BackgroundColor="Transparent" HeightRequest="44" WidthRequest="-1" 
+                       TextColor="{Binding TitleColor}" FontSize="16" FontAttributes="Bold" IsVisible="{Binding HasTitle}"
                        VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
                     <Label.Triggers>
-                        <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasSubtitle}" Value="true">
+                        <DataTrigger TargetType="Label" Binding="{Binding HasSubtitle}" Value="true">
                             <Setter Property="HeightRequest" Value="22"/>
                         </DataTrigger>
-                        <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasTitleIcon}" Value="false">
+                        <DataTrigger TargetType="Label" Binding="{Binding HasTitleIcon}" Value="false">
                             <DataTrigger.Setters>
                                 <Setter Property="Grid.Column" Value="0"/>
                                 <Setter Property="Grid.ColumnSpan" Value="1"/>
@@ -65,11 +67,11 @@
                         </DataTrigger>
                     </Label.Triggers>
                 </Label>
-                <Label Grid.Row="1" Grid.Column="1" Text="{TemplateBinding BindingContext.SubtitleText}" BackgroundColor="Transparent" 
-                       HeightRequest="22" WidthRequest="-1" TextColor="{TemplateBinding BindingContext.SubtitleColor}" FontSize="14" IsVisible="false"
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding SubtitleText}" BackgroundColor="Transparent" 
+                       HeightRequest="22" WidthRequest="-1" TextColor="{Binding SubtitleColor}" FontSize="14" IsVisible="false"
                        VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
                     <Label.Triggers>
-                        <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasTitleIcon}" Value="false">
+                        <DataTrigger TargetType="Label" Binding="{Binding HasTitleIcon}" Value="false">
                             <DataTrigger.Setters>
                                 <Setter Property="Grid.Column" Value="0"/>
                                 <Setter Property="Grid.ColumnSpan" Value="1"/>
@@ -77,8 +79,8 @@
                         </DataTrigger>
                         <MultiTrigger TargetType="Label">
                             <MultiTrigger.Conditions>
-                                <BindingCondition Binding="{TemplateBinding BindingContext.HasTitle}" Value="true"/>
-                                <BindingCondition Binding="{TemplateBinding BindingContext.HasSubtitle}" Value="true"/>
+                                <BindingCondition Binding="{Binding HasTitle}" Value="true"/>
+                                <BindingCondition Binding="{Binding HasSubtitle}" Value="true"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="IsVisible" Value="true"/>
                         </MultiTrigger>
@@ -93,8 +95,33 @@
                     </DataTrigger>
                 </Button.Triggers>
             </Button>
-            <SearchBar Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" SearchCommand="{TemplateBinding BindingContext.SearchCommand}" CancelButtonColor="White"
-                       IsVisible="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}" BackgroundColor="Transparent" TextColor="{StaticResource ColorPrimary}"/>
+            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" RowSpacing="0" ColumnSpacing="0" BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1"
+                  VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding SearchVisible, Source={x:Reference Name=SearchBarContext}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="44"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>                
+                <Entry x:Name="txtSearch" Grid.Row="0" Grid.Column="0" Placeholder="{Binding Source={StaticResource Search}, StringFormat='{0} Type and Search'}" IsTextPredictionEnabled="false"
+                       Text="{Binding SearchText, Source={x:Reference Name=SearchBarContext}}" TextColor="White" FontSize="16" FontFamily="{StaticResource FASolid}" ReturnType="Search"
+                       BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Entry.Effects>
+                        <Effect:BorderEffect BorderColor="Transparent"/>
+                    </Entry.Effects>
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>None</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
+                </Entry>
+                <Button Grid.Row="0" Grid.Column="1" Text="{StaticResource Close}" TextColor="Red" FontSize="18" FontFamily="{StaticResource FARegular}" BackgroundColor="Transparent" 
+                        Clicked="BtnClose_Clicked" HeightRequest="44" WidthRequest="44" HorizontalOptions="End" VerticalOptions="End"/>
+                <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="End" HorizontalOptions="FillAndExpand" WidthRequest="-1" HeightRequest="1" BackgroundColor="White" Margin="0,0,8,4"/>
+            </Grid>
         </Grid>
     </ContentView.Content>
 </ContentView>

@@ -4,7 +4,7 @@ namespace XFArchitecture.Views.User.Register
 {
     public partial class RegisterPage : BasePage
     {
-        public RegisterPage() : base(nameof(RegisterPage)+" - User")
+        public RegisterPage() : base(nameof(RegisterPage) + " - User")
         {
             InitializeComponent();
         }

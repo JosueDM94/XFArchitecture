@@ -5,9 +5,11 @@
     x:Class="XFArchitecture.Controls.NavigationBar"
     x:Name="NavigationBarContext">
     <ContentView.Content>
+        <Frame Padding="0" Margin="0" CornerRadius="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" OutlineColor="#00000088" HasShadow="{Binding HasShadow, Source={x:Reference Name=NavigationBarContext}}">
         <StackLayout Orientation="Vertical" Spacing="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" WidthRequest="-1" HeightRequest="-1">
             <BoxView BindingContext="{Binding Source={x:Reference Name=NavigationBarContext}}" HeightRequest="{Binding StatusHeight}" BackgroundColor="{Binding StatusBackgroundColor}" WidthRequest="-1" VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
             <ContentView BindingContext="{Binding Source={x:Reference Name=NavigationBarContext}}" ControlTemplate="{Binding NavigationBarStyle, Converter={StaticResource StyleTemplate}}" HeightRequest="44" WidthRequest="-1"/>
         </StackLayout>
+        </Frame>
     </ContentView.Content>
 </ContentView>

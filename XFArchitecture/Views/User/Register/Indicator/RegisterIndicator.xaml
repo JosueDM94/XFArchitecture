@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XFArchitecture.Views.User.Register.Indicator.RegisterIndicator"
+    xmlns:Skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    x:Name="RegisterIndicatorContext">
+    <ContentView.Content>
+        <Grid WidthRequest="150" HeightRequest="30" RowSpacing="0" ColumnSpacing="0" VerticalOptions="Center" HorizontalOptions="Center" Padding="0,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Gray300}" HeightRequest="2" WidthRequest="45" VerticalOptions="Center" HorizontalOptions="Start" Margin="20,0,0,0">
+                <BoxView.Triggers>
+                    <DataTrigger TargetType="BoxView" Binding="{Binding Position, Converter={StaticResource StepCompleted}, ConverterParameter=0}" Value="true">
+                        <Setter Property="BackgroundColor" Value="{StaticResource GreenA400}"/>
+                    </DataTrigger>
+                </BoxView.Triggers>
+            </BoxView>
+            <BoxView Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="{StaticResource Gray300}" HeightRequest="2" WidthRequest="45" VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,20,0">
+                <BoxView.Triggers>
+                    <DataTrigger TargetType="BoxView" Binding="{Binding Position, Converter={StaticResource StepCompleted}, ConverterParameter=1}" Value="true">
+                        <Setter Property="BackgroundColor" Value="{StaticResource GreenA400}"/>
+                    </DataTrigger>
+                </BoxView.Triggers>
+            </BoxView>
+            <Frame x:Name="Circle" Grid.Row="0" Grid.Column="{Binding Position}" BackgroundColor="Transparent" CornerRadius="10" HasShadow="false" Padding="0" BorderColor="{StaticResource Gray600}"
+                   HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center">
+                <Frame.Triggers>
+                    <DataTrigger TargetType="Frame" Binding="{Binding Position}" Value="0">
+                        <Setter Property="HorizontalOptions" Value="Start"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Frame" Binding="{Binding Position}" Value="1">
+                        <Setter Property="HorizontalOptions" Value="Center"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Frame" Binding="{Binding Position}" Value="2">
+                        <Setter Property="HorizontalOptions" Value="End"/>
+                    </DataTrigger>
+                </Frame.Triggers>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="{StaticResource Gray300}" CornerRadius="3" HasShadow="false" Padding="0" Margin="7" 
+                   HeightRequest="6" WidthRequest="6" HorizontalOptions="Start" VerticalOptions="Center">
+                <Frame.Triggers>
+                    <DataTrigger TargetType="Frame" Binding="{Binding Position, Converter={StaticResource StepCompleted}, ConverterParameter=0}" Value="true">
+                        <DataTrigger.Setters>
+                            <Setter Property="BackgroundColor" Value="{StaticResource GreenA400}"/>
+                            <Setter Property="HeightRequest" Value="20"/>
+                            <Setter Property="WidthRequest" Value="20"/>
+                            <Setter Property="CornerRadius" Value="10"/>
+                            <Setter Property="Margin" Value="0"/>
+                        </DataTrigger.Setters>                        
+                    </DataTrigger>
+                </Frame.Triggers>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource Gray300}" CornerRadius="3" HasShadow="false" Padding="0" Margin="5"
+                   HeightRequest="6" WidthRequest="6" HorizontalOptions="Center" VerticalOptions="Center">
+                <Frame.Triggers>
+                   <DataTrigger TargetType="Frame" Binding="{Binding Position, Converter={StaticResource StepCompleted}, ConverterParameter=1}" Value="true">
+                        <DataTrigger.Setters>
+                            <Setter Property="BackgroundColor" Value="{StaticResource GreenA400}"/>
+                            <Setter Property="HeightRequest" Value="20"/>
+                            <Setter Property="WidthRequest" Value="20"/>
+                            <Setter Property="CornerRadius" Value="10"/>
+                            <Setter Property="Margin" Value="0"/>
+                        </DataTrigger.Setters>                        
+                    </DataTrigger>
+                </Frame.Triggers>
+            </Frame>
+            <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="{StaticResource Gray300}" CornerRadius="3" HasShadow="false" Padding="0" Margin="7"
+                   HeightRequest="6" WidthRequest="6" HorizontalOptions="End" VerticalOptions="Center"/>
+            <!--<Skia:SKCanvasView x:Name="CanvasView" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" PaintSurface="CanvasView_PaintSurface" BackgroundColor="Transparent"
+                               HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="Start"/>-->
+        </Grid>
+    </ContentView.Content>
+</ContentView>

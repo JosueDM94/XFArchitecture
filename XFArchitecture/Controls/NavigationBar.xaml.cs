@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 
@@ -155,6 +156,13 @@ namespace XFArchitecture.Controls
         {
             get { return (RightButtons)GetValue(HasRightButtonsProperty); }
             set { SetValue(HasRightButtonsProperty, value); }
+        }
+
+        public static readonly BindableProperty HasShadowProperty = BindableProperty.Create(nameof(HasShadow), typeof(bool), typeof(NavigationBar), true, BindingMode.TwoWay);
+        public bool HasShadow
+        {
+            get { return (bool)GetValue(HasShadowProperty); }
+            set { SetValue(HasShadowProperty, value); }
         }
         #endregion
 

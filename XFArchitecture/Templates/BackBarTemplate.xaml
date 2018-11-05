@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ResourceDictionary 
+<ContentView 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="XFArchitecture.Templates.BackBarTemplate">
-    <ControlTemplate x:Key="BackBar">
+    <ContentView.Content>
         <Grid BackgroundColor="{TemplateBinding BindingContext.BarBackgroundColor}" ColumnSpacing="0" RowSpacing="0" HeightRequest="44" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="44"/>
@@ -71,5 +71,5 @@
                 </Label>
             </Grid>
         </Grid>
-    </ControlTemplate>
-</ResourceDictionary>
+    </ContentView.Content>
+</ContentView>

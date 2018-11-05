@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="XFArchitecture.Views.User.Register.Content.StepOneView"
+    xmlns:Effect="clr-namespace:XFArchitecture.Effects">
+    <ContentView.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="First Name:"/>
+            <Entry Grid.Row="1" Grid.Column="0" Placeholder="First name"/>
+            <Label Grid.Row="2" Grid.Column="0" Text="Last Name:"/>
+            <Entry Grid.Row="3" Grid.Column="0" Placeholder="Last name"/>
+            <Label Grid.Row="4" Grid.Column="0" Text="Phone number:"/>
+            <Entry Grid.Row="5" Grid.Column="0" Placeholder="Phone number" Keyboard="Telephone"/>
+            <Label Grid.Row="6" Grid.Column="0" Text="Date of birth:"/>
+            <DatePicker Grid.Row="7" Grid.Column="0"/>
+            <Label Grid.Row="8" Grid.Column="0" Text="Gender:"/>
+            <Entry Grid.Row="9" Grid.Column="0" Placeholder="Gender"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
