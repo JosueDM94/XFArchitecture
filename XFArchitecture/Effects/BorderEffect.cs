@@ -10,7 +10,7 @@ namespace XFArchitecture.Effects
 
         public int BorderRadius { get; set; } = 0;
 
-        public static readonly BindableProperty BorderColorProperty = BindableProperty.CreateAttached("BorderColor", typeof(Color), typeof(BorderEffect), Color.Default, BindingMode.TwoWay);
+        public static readonly BindableProperty BorderColorProperty = BindableProperty.CreateAttached("BorderColor", typeof(Color), typeof(BorderEffect), Color.Default);
 
         public static Color GetBorderColor(BindableObject view)
         {

@@ -31,7 +31,6 @@
     <Style x:Key="BaseError" TargetType="Label">
         <Style.Setters>
             <Setter Property="FontSize" Value="12"/>
-            <Setter Property="IsVisible" Value="false"/>
             <Setter Property="WidthRequest" Value="-1"/>
             <Setter Property="HeightRequest" Value="-1"/>
             <Setter Property="BackgroundColor" Value="Transparent"/>
@@ -39,21 +38,6 @@
             <Setter Property="HorizontalTextAlignment" Value="Start"/>
             <Setter Property="VerticalOptions" Value="FillAndExpand"/>
             <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-        </Style.Setters>
-    </Style>
-    <Style x:Key="Error" TargetType="Label" BasedOn="{StaticResource BaseError}">
-        <Style.Setters>
-            <Setter Property="TextColor" Value="Red"/>
-        </Style.Setters>
-    </Style>
-    <Style x:Key="Warning" TargetType="Label" BasedOn="{StaticResource BaseError}">
-        <Style.Setters>
-            <Setter Property="TextColor" Value="Orange"/>
-        </Style.Setters>
-    </Style>
-    <Style x:Key="Information" TargetType="Label" BasedOn="{StaticResource BaseError}">
-        <Style.Setters>
-            <Setter Property="TextColor" Value="Yellow"/>
         </Style.Setters>
     </Style>
 </ResourceDictionary>

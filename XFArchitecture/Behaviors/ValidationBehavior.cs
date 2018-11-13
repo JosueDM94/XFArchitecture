@@ -47,15 +47,18 @@ namespace XFArchitecture.Behaviors
             bool isValid = true;    
             foreach (var validator in Validators)
             {
-                isValid = validator.Check(view.GetType().GetProperty(PropertyName).GetValue(view));
-                if (!isValid)
+                bool result = validator.Check(view.GetType().GetProperty(PropertyName).GetValue(view));
+                isValid = isValid && result;
+                if (!result)
                 {
                     ErrorStyle = validator.Style;
                     ErrorMessage = validator.Message;
                     break;
                 }
             }
-            return IsValid = !isValid;
+
+            IsValid = !isValid;
+            return isValid;
         }
 
         protected override void OnAttachedTo(BindableObject bindable)

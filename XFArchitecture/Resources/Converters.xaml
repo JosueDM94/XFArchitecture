@@ -7,7 +7,7 @@
     <Converter:IsImageConverter x:Key="IsImage"/>
     <Converter:IsSelectedConverter x:Key="IsSelected"/>
     <Converter:IsCenteredConverter x:Key="IsCentered"/>
-    <Converter:StyleErrorConverter x:Key="StyleError"/>
+    <Converter:ColorErrorConverter x:Key="ColorError"/>
     <Converter:IsSmallFontConverter x:Key="IsSmallFont"/>        
     <Converter:StyleTemplateConverter x:Key="StyleTemplate"/>
     <Converter:StepCompletedConverter x:Key="StepCompleted"/>
