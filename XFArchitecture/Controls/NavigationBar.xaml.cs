@@ -158,7 +158,7 @@ namespace XFArchitecture.Controls
             set { SetValue(HasRightButtonsProperty, value); }
         }
 
-        public static readonly BindableProperty HasShadowProperty = BindableProperty.Create(nameof(HasShadow), typeof(bool), typeof(NavigationBar), true, BindingMode.TwoWay);
+        public static readonly BindableProperty HasShadowProperty = BindableProperty.Create(nameof(HasShadow), typeof(bool), typeof(NavigationBar), false, BindingMode.TwoWay);
         public bool HasShadow
         {
             get { return (bool)GetValue(HasShadowProperty); }

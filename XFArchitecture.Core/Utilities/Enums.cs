@@ -36,4 +36,12 @@ namespace XFArchitecture.Core.Utilities
         One = 1,
         Two = 2
     }
+
+    public enum ErrorType
+    {
+        Error = 0,
+        Sucess =1,
+        Warning = 2,
+        Information = 3
+    }
 }

@@ -42,6 +42,8 @@
     <Folder Include="ViewModels\Login\" />
     <Folder Include="ViewModels\User\" />
     <Folder Include="ViewModels\User\Register\" />
+    <Folder Include="Validations\" />
+    <Folder Include="Contracts\Validation\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Services\Dependency\IKeyboardService.cs" />

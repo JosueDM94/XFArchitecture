@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
@@ -112,6 +111,8 @@
     <Compile Include="Views\Splash\SplashActivity.cs" />
     <Compile Include="Effects\TintColorEffect.cs" />
     <Compile Include="Services\Dependency\DeviceService.cs" />
+    <Compile Include="Effects\FontPaddingEffect.cs" />
+    <Compile Include="Effects\ShadowEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -121,21 +122,19 @@
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
-    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
-    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
     <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\ic_checkbox_unchecked.png" />
     <AndroidResource Include="Resources\drawable\ic_checkbox_checked.png" />
-    <AndroidResource Include="Resources\drawable\im_school.png" />
+    <AndroidResource Include="Resources\drawable\ic_camera.png" />
+    <AndroidResource Include="Resources\drawable\bg_login.png" />
+    <AndroidResource Include="Resources\drawable\bg_splash.png" />
+    <AndroidResource Include="Resources\drawable\ic_xamarin.png" />
+    <AndroidResource Include="Resources\drawable\bg_register.png" />
+    <AndroidResource Include="Resources\drawable\OverShadow.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -153,6 +152,7 @@
     <Folder Include="Assets\Animations\" />
     <Folder Include="Effects\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Renderers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XFArchitecture\XFArchitecture.csproj">
@@ -170,6 +170,15 @@
     <AndroidAsset Include="Assets\Fonts\fa-brands-400.ttf" />
     <AndroidAsset Include="Assets\Fonts\fa-regular-400.ttf" />
     <AndroidAsset Include="Assets\Fonts\fa-solid-900.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Quicksand-Bold.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Quicksand-Light.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Quicksand-Medium.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Quicksand-Regular.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Poppins-Bold.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Poppins-Light.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Poppins-Medium.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Poppins-Regular.ttf" />
+    <AndroidAsset Include="Assets\Fonts\Poppins-SemiBold.ttf" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

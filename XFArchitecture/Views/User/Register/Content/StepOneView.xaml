@@ -1,37 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:Validators="clr-namespace:XFArchitecture.Core.Validations;assembly=XFArchitecture.Core"
     x:Class="XFArchitecture.Views.User.Register.Content.StepOneView"
-    xmlns:Effect="clr-namespace:XFArchitecture.Effects">
+    xmlns:Behaviors="clr-namespace:XFArchitecture.Behaviors"    
+    xmlns:Effects="clr-namespace:XFArchitecture.Effects">
     <ContentView.Content>
-        <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="15">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="30"/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Text="First Name:"/>
-            <Entry Grid.Row="1" Grid.Column="0" Placeholder="First name"/>
-            <Label Grid.Row="2" Grid.Column="0" Text="Last Name:"/>
-            <Entry Grid.Row="3" Grid.Column="0" Placeholder="Last name"/>
-            <Label Grid.Row="4" Grid.Column="0" Text="Phone number:"/>
-            <Entry Grid.Row="5" Grid.Column="0" Placeholder="Phone number" Keyboard="Telephone"/>
-            <Label Grid.Row="6" Grid.Column="0" Text="Date of birth:"/>
-            <DatePicker Grid.Row="7" Grid.Column="0"/>
-            <Label Grid.Row="8" Grid.Column="0" Text="Gender:"/>
-            <Entry Grid.Row="9" Grid.Column="0" Placeholder="Gender"/>
-        </Grid>
+        <StackLayout Spacing="0" Orientation="Vertical" BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="15,0">            
+            <StackLayout BackgroundColor="{StaticResource Gray300}" Margin="5" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="100" WidthRequest="100" IsClippedToBounds="true" Effects:BorderEffect.BorderColor="Transparent">
+                <StackLayout.Effects>
+                    <Effects:BorderEffect BorderRadius="50" BorderWidth="0"/>
+                </StackLayout.Effects>
+                <Image Source="ic_camera" Aspect="AspectFit" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image.Effects>
+                        <Effects:TintColorEffect TintColor="{StaticResource Gray700}"/>
+                    </Image.Effects>
+                </Image>
+            </StackLayout>
+            <Label Text="First Name:" HorizontalOptions="FillAndExpand" TextColor="White"/>
+            <Entry Placeholder="First name" HorizontalOptions="FillAndExpand" TextColor="White">
+                <Entry.Behaviors>
+                    <Behaviors:ValidationBehavior PropertyName="Text">
+                        <Behaviors:ValidationBehavior.Validators>
+                            <Validators:RequiredValidator/>
+                        </Behaviors:ValidationBehavior.Validators>
+                    </Behaviors:ValidationBehavior>
+                </Entry.Behaviors>
+            </Entry>
+            <Label Text="Last Name:" HorizontalOptions="FillAndExpand"/>
+            <Entry Placeholder="Last name" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Phone number:" HorizontalOptions="FillAndExpand"/>
+            <Entry Placeholder="Phone number" Keyboard="Telephone" HorizontalOptions="FillAndExpand"/>
+            <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Date of birth:"/>
+                <DatePicker Grid.Row="1" Grid.Column="0">
+                    <DatePicker.Behaviors>
+                        <Behaviors:ValidationBehavior PropertyName="Date">
+                            <Behaviors:ValidationBehavior.Validators>
+                                <Validators:RequiredValidator/>
+                            </Behaviors:ValidationBehavior.Validators>
+                        </Behaviors:ValidationBehavior>
+                    </DatePicker.Behaviors>
+                </DatePicker>
+                <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Gender:"/>
+                <Button Grid.Row="1" Grid.Column="1" Text="{Binding Source={StaticResource Male}, StringFormat='{0} Male'}" FontSize="14" FontFamily="{StaticResource FASolid}" BorderColor="Transparent" BorderRadius="0" BorderWidth="0"
+                        BackgroundColor="{StaticResource DarkBlue}" Margin="0" Padding="0" HeightRequest="40" WidthRequest="70" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                <Button Grid.Row="1" Grid.Column="2" Text="{Binding Source={StaticResource Female}, StringFormat='{0} Female'}" FontSize="14" FontFamily="{StaticResource FASolid}" BorderColor="Transparent" BorderRadius="0" BorderWidth="0"
+                        BackgroundColor="{StaticResource DarkBlue}" Margin="0" Padding="0" HeightRequest="40" WidthRequest="70" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+            </Grid>
+        </StackLayout>
     </ContentView.Content>
 </ContentView>

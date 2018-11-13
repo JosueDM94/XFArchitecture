@@ -18,8 +18,6 @@ namespace XFArchitecture.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : FormsApplicationDelegate
     {
-        public override UIWindow Window { get; set; }
-
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
             Forms.Init();

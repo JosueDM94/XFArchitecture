@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView 
     xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="XFArchitecture.Templates.TitleBarTemplate">
     <ContentView.Content>
         <StackLayout Spacing="0" BackgroundColor="{TemplateBinding BindingContext.BarBackgroundColor}" HeightRequest="44" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
@@ -25,9 +25,9 @@
                         </DataTrigger>
                     </Image.Triggers>
                 </Image>
-                <Label Grid.Row="0" Grid.Column="1" Text="{TemplateBinding BindingContext.TitleText}" BackgroundColor="Transparent" HeightRequest="44" WidthRequest="-1" 
-                       TextColor="{TemplateBinding BindingContext.TitleColor}" FontSize="16" FontAttributes="Bold" IsVisible="{TemplateBinding BindingContext.HasTitle}"
-                       VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                <Label Grid.Row="0" Grid.Column="1" Text="{TemplateBinding BindingContext.TitleText}" BackgroundColor="Transparent" FontFamily="{StaticResource PoppinsSemiBold}"
+                       TextColor="{TemplateBinding BindingContext.TitleColor}" FontSize="16" IsVisible="{TemplateBinding BindingContext.HasTitle}" HeightRequest="44"
+                       WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
                     <Label.Triggers>
                         <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasSubtitle}" Value="true">
                             <Setter Property="HeightRequest" Value="22"/>
@@ -40,8 +40,8 @@
                         </DataTrigger>
                     </Label.Triggers>
                 </Label>
-                <Label Grid.Row="1" Grid.Column="1" Text="{TemplateBinding BindingContext.SubtitleText}" BackgroundColor="Transparent" FontSize="14"
-                       HeightRequest="22" WidthRequest="-1" TextColor="{TemplateBinding BindingContext.SubtitleColor}" IsVisible="false"
+                <Label Grid.Row="1" Grid.Column="1" Text="{TemplateBinding BindingContext.SubtitleText}" BackgroundColor="Transparent" FontFamily="{StaticResource QuicksandRegular}"
+                       HeightRequest="22" WidthRequest="-1" TextColor="{TemplateBinding BindingContext.SubtitleColor}" FontSize="14" IsVisible="false"
                        VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
                     <Label.Triggers>
                         <DataTrigger TargetType="Label" Binding="{TemplateBinding BindingContext.HasTitleIcon}" Value="false">
@@ -57,7 +57,7 @@
                             </MultiTrigger.Conditions>
                             <Setter Property="IsVisible" Value="true"/>
                         </MultiTrigger>
-                    </Label.Triggers>                    
+                    </Label.Triggers>
                 </Label>            
             </Grid>
         </StackLayout>

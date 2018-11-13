@@ -21,7 +21,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>9.0</string>
+	<string>10.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>XFArchitecture</string>
 	<key>CFBundleIdentifier</key>
@@ -43,6 +43,15 @@
 		<string>Fonts/fa-regular-400.ttf</string>
 		<string>Fonts/fa-brands-400.ttf</string>
 		<string>Fonts/fa-solid-900.ttf</string>
+		<string>Fonts/Poppins-Bold.ttf</string>
+		<string>Fonts/Poppins-Light.ttf</string>
+		<string>Fonts/Poppins-Medium.ttf</string>
+		<string>Fonts/Poppins-Regular.ttf</string>
+		<string>Fonts/Poppins-SemiBold.ttf</string>
+		<string>Fonts/Quicksand-Bold.ttf</string>
+		<string>Fonts/Quicksand-Light.ttf</string>
+		<string>Fonts/Quicksand-Medium.ttf</string>
+		<string>Fonts/Quicksand-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

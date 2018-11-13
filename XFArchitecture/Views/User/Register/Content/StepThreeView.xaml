@@ -5,7 +5,7 @@
     x:Class="XFArchitecture.Views.User.Register.Content.StepThreeView"
     xmlns:Effect="clr-namespace:XFArchitecture.Effects">
     <ContentView.Content>
-        <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="15">
+        <Grid RowSpacing="0" ColumnSpacing="0" BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="15">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="40"/>

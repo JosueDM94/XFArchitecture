@@ -15,4 +15,40 @@
         <On Platform="iOS">FontAwesome5BrandsRegular</On>
         <On Platform="Android">Fonts/fa-brands-400.ttf#Font Awesome 5 Brands Regular</On>        
     </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsBold">
+        <On Platform="iOS">Poppins-Bold</On>
+        <On Platform="Android">Fonts/Poppins-Bold.ttf#Poppins</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsLight">
+        <On Platform="iOS">Poppins-Light</On>
+        <On Platform="Android">Fonts/Poppins-Light.ttf#Poppins</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsMedium">
+        <On Platform="iOS">Poppins-Medium</On>
+        <On Platform="Android">Fonts/Poppins-Medium.ttf#Poppins</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsRegular">
+        <On Platform="iOS">Poppins-Regular</On>
+        <On Platform="Android">Fonts/Poppins-Regular.ttf#Poppins</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="PoppinsSemiBold">
+        <On Platform="iOS">Poppins-SemiBold</On>
+        <On Platform="Android">Fonts/Poppins-SemiBold.ttf#Poppins</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="QuicksandBold">
+        <On Platform="iOS">Quicksand-Bold</On>
+        <On Platform="Android">Fonts/Quicksand-Bold.ttf#Quicksand</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="QuicksandLight">
+        <On Platform="iOS">Quicksand-Light</On>
+        <On Platform="Android">Fonts/Quicksand-Light.ttf#Quicksand</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="QuicksandMedium">
+        <On Platform="iOS">Quicksand-Medium</On>
+        <On Platform="Android">Fonts/Quicksand-Medium.ttf#Quicksand</On>
+    </OnPlatform>
+    <OnPlatform x:TypeArguments="x:String" x:Key="QuicksandRegular">
+        <On Platform="iOS">Quicksand-Regular</On>
+        <On Platform="Android">Fonts/Quicksand-Regular.ttf#Quicksand</On>
+    </OnPlatform>
 </ResourceDictionary>

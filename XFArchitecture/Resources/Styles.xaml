@@ -2,5 +2,58 @@
 <ResourceDictionary
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Effect="clr-namespace:XFArchitecture.Effects"
     x:Class="XFArchitecture.Resources.Styles">
+    
+    <!--IMPLICIT STYLES-->
+    <Style TargetType="Label">
+        <Style.Setters>
+            <Setter Property="Effect:FontPaddingEffect.IncludeFontPadding" Value="false" />
+        </Style.Setters>
+    </Style>
+    <Style TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Effect:FontPaddingEffect.IncludeFontPadding" Value="false" />
+        </Style.Setters>
+    </Style>
+    <Style TargetType="Entry">
+        <Style.Setters>
+            <Setter Property="Effect:FontPaddingEffect.IncludeFontPadding" Value="false" />
+        </Style.Setters>
+    </Style>
+    <Style TargetType="Editor">
+        <Style.Setters>
+            <Setter Property="Effect:FontPaddingEffect.IncludeFontPadding" Value="false" />
+        </Style.Setters>
+    </Style>
+    
+    <!--EXCLICIT STYLES-->
+    <Style x:Key="BaseError" TargetType="Label">
+        <Style.Setters>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="IsVisible" Value="false"/>
+            <Setter Property="WidthRequest" Value="-1"/>
+            <Setter Property="HeightRequest" Value="-1"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Error" TargetType="Label" BasedOn="{StaticResource BaseError}">
+        <Style.Setters>
+            <Setter Property="TextColor" Value="Red"/>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Warning" TargetType="Label" BasedOn="{StaticResource BaseError}">
+        <Style.Setters>
+            <Setter Property="TextColor" Value="Orange"/>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="Information" TargetType="Label" BasedOn="{StaticResource BaseError}">
+        <Style.Setters>
+            <Setter Property="TextColor" Value="Yellow"/>
+        </Style.Setters>
+    </Style>
 </ResourceDictionary>

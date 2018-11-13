@@ -2,7 +2,8 @@
 <Base:BasePage
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:CarouselView="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"    
+    xmlns:CarouselView="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+    xmlns:FFImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:Indicator="clr-namespace:XFArchitecture.Views.User.Register.Indicator"
     xmlns:Step="clr-namespace:XFArchitecture.Views.User.Register.Content"
     x:Class="XFArchitecture.Views.User.Register.RegisterPage"
@@ -11,11 +12,20 @@
     xmlns:Base="clr-namespace:XFArchitecture.Views.Base"    
     Services:ViewModelLocator.AutoWireViewModel="True">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Spacing="0" HeightRequest="-1" WidthRequest="-1" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Control:NavigationBar NavigationBarStyle="SearchBar" LeftCommand="{Binding GoBack}" SearchCommand="{Binding SearchCommand}" HasTitle="true" HasSubtitle="false" HasTitleIcon="true" HasBackButton="true" HasRightButtons="Two"
-                                   TitleIcon="ic_checkbox_checked" SubtitleText="Hello World!" LeftIcon="{StaticResource Menu}" RightTwoIcon="{StaticResource Search}" RightOneIcon="{StaticResource Save}"/>
-            <Indicator:RegisterIndicator Position="{Binding Position}" HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <CarouselView:CarouselViewControl BindingContext="{Binding .}" Position="{Binding Position, Mode=TwoWay}" BackgroundColor="Transparent"
+        <Grid RowSpacing="0" ColumnSpacing="0" HeightRequest="-1" WidthRequest="-1" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <FFImage:CachedImage Opacity="0.4" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Source="bg_register" Aspect="AspectFill"
+                                 HeightRequest="-1" WidthRequest="-1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            <Control:NavigationBar Grid.Row="0" Grid.Column="0" NavigationBarStyle="BackBar" TitleText="Register" LeftCommand="{Binding GoBack}" HasShadow="true"/>
+            <Indicator:RegisterIndicator Grid.Row="1" Grid.Column="0" Position="{Binding Position}"/>
+            <CarouselView:CarouselViewControl Grid.Row="2" Grid.Column="0" BindingContext="{Binding .}" Position="{Binding Position}" BackgroundColor="Transparent"
                                               HeightRequest="-1" WidthRequest="-1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <CarouselView:CarouselViewControl.ItemsSource>
                    <x:Array Type="{x:Type View}">
@@ -25,6 +35,6 @@
                    </x:Array>
                 </CarouselView:CarouselViewControl.ItemsSource>
             </CarouselView:CarouselViewControl>
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>    
 </Base:BasePage>

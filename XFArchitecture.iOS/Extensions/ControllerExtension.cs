@@ -1,4 +1,5 @@
 ﻿using System;
+using CoreGraphics;
 using UIKit;
 
 namespace XFArchitecture.iOS.Extensions
@@ -14,6 +15,15 @@ namespace XFArchitecture.iOS.Extensions
             if (backgroundColor != null)
                 vw.BackgroundColor = backgroundColor;
 
+            return vw;
+        }
+
+        public static UIView AddShadow(this UIView vw)
+        {
+            vw.Layer.ShadowRadius = 1f;
+            vw.Layer.ShadowOpacity = 0.30f;
+            vw.Layer.ShadowOffset = new CGSize(0, 2);
+            vw.Layer.ShadowColor = UIColor.Black.CGColor;
             return vw;
         }
     }

@@ -93,9 +93,9 @@ namespace XFArchitecture.Controls
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
+            base.OnPropertyChanged(propertyName);
             if (propertyName.Equals(CheckedProperty.PropertyName) || propertyName.Equals(CheckedImageProperty.PropertyName) || propertyName.Equals(UnCheckedImageProperty.PropertyName))
                 Source = Checked ? CheckedImage : UnCheckedImage;
-            base.OnPropertyChanged(propertyName);
         }
 
         public void Dispose()

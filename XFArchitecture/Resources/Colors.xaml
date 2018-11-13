@@ -8,6 +8,7 @@
     <Color x:Key="GreenA700">#00C853</Color>
     
     <Color x:Key="DarkGray">#7F8C8D</Color>
+    <Color x:Key="DarkBlue">#2980B9</Color>
     
     <Color x:Key="Gray300">#E0E0E0</Color>
     <Color x:Key="Gray400">#BDBDBD</Color>
@@ -18,5 +19,10 @@
     <Color x:Key="ColorPrimary">#1976D2</Color>
     <Color x:Key="ColorAccent">Transparent</Color>
     <Color x:Key="ColorPrimaryDark">#2196F3</Color>
+    
+    <Color x:Key="ErrorColor">Red</Color>
+    <Color x:Key="SucessColor">Green</Color>
+    <Color x:Key="WatningColor">Orange</Color>
+    <Color x:Key="InformationColor">Yellow</Color>
     
 </ResourceDictionary>

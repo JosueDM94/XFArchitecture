@@ -1,8 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+
+using Xamarin.Essentials;
 
 using XFArchitecture.Core.Models;
 using XFArchitecture.Core.Services;
@@ -10,11 +9,10 @@ using XFArchitecture.Core.Utilities;
 using XFArchitecture.Core.Contracts.General;
 using XFArchitecture.Core.Contracts.Database;
 using XFArchitecture.Core.Contracts.Repository;
-using Xamarin.Essentials;
 
 namespace XFArchitecture.Core.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : ObservableObject
     {
         protected IDialogService Dialog { get; set; }
         protected ILoadingService Loading { get; set; }
@@ -108,24 +106,6 @@ namespace XFArchitecture.Core.ViewModels
         protected void DoAction(Action action)
         {
             MainThread.RunActionOnUIThread(action);
-        }
-
-        protected virtual bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName]string propertyName = "", Action onChanged = null)
-        {
-            //if value didn't change
-            if (EqualityComparer<T>.Default.Equals(backingStore, value))
-                return false;
-
-            backingStore = value;
-            onChanged?.Invoke();
-            OnPropertyChanged(propertyName);
-            return true;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

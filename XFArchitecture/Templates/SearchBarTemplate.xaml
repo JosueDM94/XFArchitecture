@@ -52,9 +52,9 @@
                         </DataTrigger>
                     </Image.Triggers>
                 </Image>
-                <Label Grid.Row="0" Grid.Column="1" Text="{Binding TitleText}" BackgroundColor="Transparent" HeightRequest="44" WidthRequest="-1" 
-                       TextColor="{Binding TitleColor}" FontSize="16" FontAttributes="Bold" IsVisible="{Binding HasTitle}"
-                       VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                <Label Grid.Row="0" Grid.Column="1" Text="{TemplateBinding BindingContext.TitleText}" BackgroundColor="Transparent" FontFamily="{StaticResource PoppinsSemiBold}"
+                       TextColor="{TemplateBinding BindingContext.TitleColor}" FontSize="16" IsVisible="{TemplateBinding BindingContext.HasTitle}" HeightRequest="44"
+                       WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
                     <Label.Triggers>
                         <DataTrigger TargetType="Label" Binding="{Binding HasSubtitle}" Value="true">
                             <Setter Property="HeightRequest" Value="22"/>
@@ -66,9 +66,10 @@
                             </DataTrigger.Setters>                            
                         </DataTrigger>
                     </Label.Triggers>
+                    
                 </Label>
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding SubtitleText}" BackgroundColor="Transparent" 
-                       HeightRequest="22" WidthRequest="-1" TextColor="{Binding SubtitleColor}" FontSize="14" IsVisible="false"
+                <Label Grid.Row="1" Grid.Column="1" Text="{TemplateBinding BindingContext.SubtitleText}" BackgroundColor="Transparent" FontFamily="{StaticResource QuicksandRegular}"
+                       HeightRequest="22" WidthRequest="-1" TextColor="{TemplateBinding BindingContext.SubtitleColor}" FontSize="14" IsVisible="false"
                        VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
                     <Label.Triggers>
                         <DataTrigger TargetType="Label" Binding="{Binding HasTitleIcon}" Value="false">

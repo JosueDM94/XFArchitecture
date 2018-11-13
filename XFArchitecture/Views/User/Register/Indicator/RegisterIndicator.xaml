@@ -3,7 +3,6 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="XFArchitecture.Views.User.Register.Indicator.RegisterIndicator"
-    xmlns:Skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
     x:Name="RegisterIndicatorContext">
     <ContentView.Content>
         <Grid WidthRequest="150" HeightRequest="30" RowSpacing="0" ColumnSpacing="0" VerticalOptions="Center" HorizontalOptions="Center" Padding="0,5">
@@ -29,7 +28,7 @@
                     </DataTrigger>
                 </BoxView.Triggers>
             </BoxView>
-            <Frame x:Name="Circle" Grid.Row="0" Grid.Column="{Binding Position}" BackgroundColor="Transparent" CornerRadius="10" HasShadow="false" Padding="0" BorderColor="{StaticResource Gray600}"
+            <Frame x:Name="Circle" Grid.Row="0" Grid.Column="{Binding Position}" BackgroundColor="Transparent" CornerRadius="10" HasShadow="false" Padding="0" BorderColor="{StaticResource GreenA400}"
                    HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center">
                 <Frame.Triggers>
                     <DataTrigger TargetType="Frame" Binding="{Binding Position}" Value="0">
@@ -43,7 +42,7 @@
                     </DataTrigger>
                 </Frame.Triggers>
             </Frame>
-            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="{StaticResource Gray300}" CornerRadius="3" HasShadow="false" Padding="0" Margin="7" 
+            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="{StaticResource Gray300}" CornerRadius="3" HasShadow="false" Padding="0" Margin="7,0" 
                    HeightRequest="6" WidthRequest="6" HorizontalOptions="Start" VerticalOptions="Center">
                 <Frame.Triggers>
                     <DataTrigger TargetType="Frame" Binding="{Binding Position, Converter={StaticResource StepCompleted}, ConverterParameter=0}" Value="true">
@@ -57,7 +56,7 @@
                     </DataTrigger>
                 </Frame.Triggers>
             </Frame>
-            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource Gray300}" CornerRadius="3" HasShadow="false" Padding="0" Margin="5"
+            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource Gray300}" CornerRadius="3" HasShadow="false" Padding="0" Margin="5,0"
                    HeightRequest="6" WidthRequest="6" HorizontalOptions="Center" VerticalOptions="Center">
                 <Frame.Triggers>
                    <DataTrigger TargetType="Frame" Binding="{Binding Position, Converter={StaticResource StepCompleted}, ConverterParameter=1}" Value="true">
@@ -71,10 +70,8 @@
                     </DataTrigger>
                 </Frame.Triggers>
             </Frame>
-            <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="{StaticResource Gray300}" CornerRadius="3" HasShadow="false" Padding="0" Margin="7"
+            <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="{StaticResource Gray300}" CornerRadius="3" HasShadow="false" Padding="0" Margin="7,0"
                    HeightRequest="6" WidthRequest="6" HorizontalOptions="End" VerticalOptions="Center"/>
-            <!--<Skia:SKCanvasView x:Name="CanvasView" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" PaintSurface="CanvasView_PaintSurface" BackgroundColor="Transparent"
-                               HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="Start"/>-->
         </Grid>
     </ContentView.Content>
 </ContentView>

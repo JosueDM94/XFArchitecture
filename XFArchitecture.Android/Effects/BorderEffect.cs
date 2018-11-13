@@ -8,7 +8,7 @@ using Xamarin.Forms.Platform.Android;
 using XFArchitecture.Droid.Effects;
 using XFArchitecture.Droid.Extensions;
 
-[assembly: ExportEffect(typeof(BorderEffect), "BorderEffect")]
+[assembly: ExportEffect(typeof(BorderEffect), nameof(BorderEffect))]
 namespace XFArchitecture.Droid.Effects
 {
     public class BorderEffect : PlatformEffect
@@ -25,7 +25,6 @@ namespace XFArchitecture.Droid.Effects
                 {
                     borderWidth = effect.BorderWidth;
                     borderRadius = effect.BorderRadius;
-                    borderColor = effect.BorderColor.ToAndroid();
                     UpdateBorder();
                 }
             }
@@ -42,10 +41,13 @@ namespace XFArchitecture.Droid.Effects
         protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)
         {
             base.OnElementPropertyChanged(args);
+            if (args.PropertyName.Equals(XFArchitecture.Effects.BorderEffect.BorderColorProperty))
+                UpdateBorder();
         }
 
         private void UpdateBorder()
         {
+            borderColor = XFArchitecture.Effects.BorderEffect.GetBorderColor(Element).ToAndroid();
             if (Control != null)
                 Control.AddBorderWithColor(borderRadius, borderColor, borderWidth);
             else

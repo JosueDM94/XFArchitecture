@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 
-using Xamarin.Forms;
 using XFArchitecture.Views.Base;
 
 namespace XFArchitecture.Views.Login

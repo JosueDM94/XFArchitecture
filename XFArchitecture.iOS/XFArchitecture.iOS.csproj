@@ -29,6 +29,7 @@
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>--xml=${ProjectDir}/LinkDescription.xml</MtouchExtraArgs>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -102,6 +103,7 @@
     <Compile Include="Extensions\ControllerExtension.cs" />
     <Compile Include="Effects\TintColorEffect.cs" />
     <Compile Include="Services\Dependency\DeviceServices.cs" />
+    <Compile Include="Effects\ShadowEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -225,9 +227,22 @@
     <BundleResource Include="Resources\Animations\anim_login.json" />
     <BundleResource Include="Resources\ic_checkbox_unchecked.png" />
     <BundleResource Include="Resources\ic_checkbox_checked.png" />
-    <BundleResource Include="Resources\im_school.png" />
     <BundleResource Include="Resources\Fonts\fa-brands-400.ttf" />
     <BundleResource Include="Resources\Fonts\fa-regular-400.ttf" />
     <BundleResource Include="Resources\Fonts\fa-solid-900.ttf" />
+    <BundleResource Include="Resources\ic_camera.png" />
+    <BundleResource Include="Resources\bg_login.png" />
+    <BundleResource Include="Resources\bg_splash.png" />
+    <BundleResource Include="Resources\ic_xamarin.png" />
+    <BundleResource Include="Resources\Fonts\Poppins-Bold.ttf" />
+    <BundleResource Include="Resources\Fonts\Poppins-Light.ttf" />
+    <BundleResource Include="Resources\Fonts\Poppins-Medium.ttf" />
+    <BundleResource Include="Resources\Fonts\Poppins-Regular.ttf" />
+    <BundleResource Include="Resources\Fonts\Quicksand-Bold.ttf" />
+    <BundleResource Include="Resources\Fonts\Quicksand-Light.ttf" />
+    <BundleResource Include="Resources\Fonts\Quicksand-Medium.ttf" />
+    <BundleResource Include="Resources\Fonts\Quicksand-Regular.ttf" />
+    <BundleResource Include="Resources\Fonts\Poppins-SemiBold.ttf" />
+    <BundleResource Include="Resources\bg_register.png" />
   </ItemGroup>
 </Project>

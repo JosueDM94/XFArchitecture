@@ -10,7 +10,7 @@ using Xamarin.Forms.Platform.iOS;
 using XFArchitecture.iOS.Effects;
 using XFArchitecture.iOS.Extensions;
 
-[assembly: ExportEffect(typeof(BorderEffect), "BorderEffect")]
+[assembly: ExportEffect(typeof(BorderEffect), nameof(BorderEffect))]
 namespace XFArchitecture.iOS.Effects
 {
     public class BorderEffect : PlatformEffect
@@ -27,7 +27,6 @@ namespace XFArchitecture.iOS.Effects
                 {
                     borderWidth = effect.BorderWidth;
                     borderRadius = effect.BorderRadius;
-                    borderColor = effect.BorderColor.ToUIColor();
                     UpdateBorder();
                 }
             }
@@ -44,13 +43,16 @@ namespace XFArchitecture.iOS.Effects
         protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)
         {
             base.OnElementPropertyChanged(args);
+            if (args.PropertyName.Equals(XFArchitecture.Effects.BorderEffect.BorderColorProperty))
+                UpdateBorder();
         }
 
         private void UpdateBorder()
         {
+            borderColor = XFArchitecture.Effects.BorderEffect.GetBorderColor(Element).ToUIColor();
             if (Control != null)
             {
-                if (Control is UITextField textField)
+                if (Control is UITextField textField && textField.BorderStyle != UITextBorderStyle.None)
                     textField.BorderStyle = UITextBorderStyle.None;
                 Control.AddBorderWithColor(borderRadius, borderColor, borderWidth);
             }                
