@@ -31,7 +31,7 @@ namespace XFArchitecture.Droid.Effects
         protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)
         {
             base.OnElementPropertyChanged(args);
-            if (args.PropertyName.Equals(XFArchitecture.Effects.ShadowEffect.HasShadowProperty))
+            if (args.PropertyName.Equals(XFArchitecture.Effects.ShadowEffect.HasShadowProperty.PropertyName))
                 UpdateShadow();
         }
 

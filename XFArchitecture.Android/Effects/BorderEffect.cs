@@ -41,7 +41,7 @@ namespace XFArchitecture.Droid.Effects
         protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)
         {
             base.OnElementPropertyChanged(args);
-            if (args.PropertyName.Equals(XFArchitecture.Effects.BorderEffect.BorderColorProperty))
+            if (args.PropertyName.Equals(XFArchitecture.Effects.BorderEffect.BorderColorProperty.PropertyName))
                 UpdateBorder();
         }
 
