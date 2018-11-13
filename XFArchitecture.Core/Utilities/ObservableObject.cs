@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace XFArchitecture.Core.Utilities
 {
-    public class BindableObject : INotifyPropertyChanged
+    public class ObservableObject : INotifyPropertyChanged
     {
         protected virtual bool SetProperty<T>(ref T backingStore, T value, [CallerMemberName]string propertyName = "", Action onChanged = null)
         {
