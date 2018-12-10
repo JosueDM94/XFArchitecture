@@ -33,7 +33,7 @@ namespace XFArchitecture.Behaviors
         public void Update()
         {
             bool isValid = true;
-            foreach (ValidationBehavior validationItem in _validationBehaviors)            
+            foreach (ValidationBehavior validationItem in _validationBehaviors)
                 isValid = isValid && validationItem.Validate();
             IsValid = isValid;
         }

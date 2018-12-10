@@ -10,6 +10,7 @@ using XFArchitecture.Views.Login;
 using XFArchitecture.Core.Services;
 using XFArchitecture.Services.General;
 using XFArchitecture.Core.Contracts.General;
+using XFArchitecture.Controls;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XFArchitecture

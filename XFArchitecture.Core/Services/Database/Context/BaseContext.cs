@@ -51,17 +51,12 @@ namespace XFArchitecture.Core.Services.Database.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            switch (DeviceInfo.Platform)
-            {
-                case DeviceInfo.Platforms.iOS:
-                    DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "..", "Library", Constants.DatabaseName); ;
-                    break;
-                case DeviceInfo.Platforms.Android:
-                    DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), Constants.DatabaseName);
-                    break;
-                default:
-                    throw new NotImplementedException("Platform not supported");
-            }
+            if (DevicePlatform.iOS == DeviceInfo.Platform)
+                DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "..", "Library", Constants.DatabaseName);
+            else if (DevicePlatform.Android == DeviceInfo.Platform)
+                DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), Constants.DatabaseName);
+            else
+                throw new NotImplementedException("Platform not supported");
             optionsBuilder.UseSqlite($"Filename={DatabasePath}");
         }
 

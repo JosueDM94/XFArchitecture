@@ -7,7 +7,6 @@ using Acr.UserDialogs;
 using Lottie.Forms.Droid;
 using FFImageLoading.Forms.Platform;
 using Xamarin.Forms.Platform.Android;
-using CarouselView.FormsPlugin.Android;
 
 using XFArchitecture.Droid.Models;
 using XFArchitecture.Core.Services;
@@ -26,12 +25,13 @@ namespace XFArchitecture.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(savedInstanceState);
 
+            Forms.SetFlags("CollectionView_Experimental");
             Forms.Init(this, savedInstanceState);
             UserDialogs.Init(this);
-            CarouselViewRenderer.Init();
             AnimationViewRenderer.Init();
             CachedImageRenderer.Init(false);
             AndroidEntity.Init(this, savedInstanceState);
+            CarouselView.FormsPlugin.Android.CarouselViewRenderer.Init();
 
             RegisterDependencies();
             LoadApplication(new App());

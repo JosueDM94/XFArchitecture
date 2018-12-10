@@ -7,8 +7,17 @@ namespace XFArchitecture.Core.ViewModels.Login
 {
     public class LoginViewModel : BaseViewModel
     {
-        public ICommand GoToRegisterCommand { get; private set; }
+        #region Bindables Properties
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { SetProperty(ref name, value); }
+        }
+
         public ICommand LoginCommand { get; private set; }
+        public ICommand GoToRegisterCommand { get; private set; }
+        #endregion
 
         public LoginViewModel()
         {

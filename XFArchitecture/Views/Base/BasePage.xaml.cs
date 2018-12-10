@@ -20,7 +20,7 @@ namespace XFArchitecture.Views.Base
             {
                 InitializeComponent();
                 ScreenName = screenName;
-                Constants.DeviceOS = DeviceInfo.Platform;
+                Constants.DeviceOS = DeviceInfo.Platform.ToString();
             }
             catch (Exception ex)
             {

@@ -48,7 +48,7 @@ namespace XFArchitecture.Core.ViewModels
         private void InitializeElements()
         {
             TaskFactory = new TaskFactory();
-            Constants.DeviceOS = DeviceInfo.Platform;
+            Constants.DeviceOS = DeviceInfo.Platform.ToString();
         }
 
         protected bool CheckInternet()

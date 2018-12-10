@@ -44,4 +44,11 @@ namespace XFArchitecture.Core.Utilities
         Warning = 2,
         Information = 3
     }
+
+    public enum PriorityType
+    {
+        Low = 0,
+        Medium = 1,
+        High = 2
+    }
 }

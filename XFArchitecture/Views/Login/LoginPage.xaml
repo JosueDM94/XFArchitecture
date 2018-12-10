@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Base:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
-    xmlns:Validators="clr-namespace:XFArchitecture.Core.Validations;assembly=XFArchitecture.Core"
+<Base:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:FFImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:Lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:Validators="clr-namespace:XFArchitecture.Validations"
     xmlns:Behaviors="clr-namespace:XFArchitecture.Behaviors"
     xmlns:Controls="clr-namespace:XFArchitecture.Controls"
     xmlns:Service="clr-namespace:XFArchitecture.Services"
@@ -10,7 +10,7 @@
     xmlns:Base="clr-namespace:XFArchitecture.Views.Base"
     Service:ViewModelLocator.AutoWireViewModel="True"
     x:Class="XFArchitecture.Views.Login.LoginPage">
-    <ContentPage.Content>                
+    <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="-1" WidthRequest="-1" BackgroundColor="Transparent">
             <FFImage:CachedImage Opacity="0.2" Source="bg_login" BackgroundColor="Transparent" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
             <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0.5,115,300,AutoSize" AbsoluteLayout.LayoutFlags="XProportional" Spacing="0" BackgroundColor="Transparent" Effects:BorderEffect.BorderColor="{StaticResource DarkGray}"
@@ -31,7 +31,7 @@
                     </StackLayout.Triggers>
                     <Label Text="{StaticResource User}" FontFamily="{StaticResource FASolid}" TextColor="{StaticResource DarkGray}" FontSize="18" HeightRequest="24" WidthRequest="24"
                            VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="0,0,3,0"/>
-                    <Entry PlaceholderColor="{StaticResource Gray600}" Placeholder="Username" FontSize="15" Effects:BorderEffect.BorderColor="Transparent"
+                    <Entry x:Name="txtUser" PlaceholderColor="{StaticResource Gray600}" Placeholder="Username" FontSize="15" Effects:BorderEffect.BorderColor="Transparent"
                            HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
                         <Entry.Effects>
                             <Effects:BorderEffect BorderWidth="0" BorderRadius="0"/>
@@ -59,7 +59,7 @@
                     </StackLayout.Triggers>
                     <Label Text="{StaticResource Lock}" FontFamily="{StaticResource FASolid}" TextColor="{StaticResource DarkGray}" FontSize="18" HeightRequest="24" WidthRequest="24"
                            VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="0,0,3,0"/>
-                    <Entry PlaceholderColor="{StaticResource Gray600}" Placeholder="Password" FontSize="15" IsPassword="true" BackgroundColor="Transparent"
+                    <Entry x:Name="txtPass" Text="{Binding Name, Mode=TwoWay}" PlaceholderColor="{StaticResource Gray600}" Placeholder="Password" FontSize="15" IsPassword="true" BackgroundColor="Transparent"
                            HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Effects:BorderEffect.BorderColor="Transparent">
                         <Entry.Effects>
                             <Effects:BorderEffect BorderWidth="0" BorderRadius="0"/>

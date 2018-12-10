@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:Validators="clr-namespace:XFArchitecture.Core.Validations;assembly=XFArchitecture.Core"
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"       
+    xmlns:FFImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="XFArchitecture.Views.User.Register.Content.StepOneView"
+    xmlns:Validators="clr-namespace:XFArchitecture.Validations"
     xmlns:Behaviors="clr-namespace:XFArchitecture.Behaviors"    
     xmlns:Effects="clr-namespace:XFArchitecture.Effects">
     <ContentView.Content>
@@ -10,12 +11,12 @@
                 <StackLayout.Effects>
                     <Effects:BorderEffect BorderRadius="50" BorderWidth="0"/>
                 </StackLayout.Effects>
-                <Image Source="ic_camera" Aspect="AspectFit" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"
+                <FFImage:CachedImage Source="ic_camera" Aspect="AspectFit" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"
                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                     <Image.Effects>
                         <Effects:TintColorEffect TintColor="{StaticResource Gray700}"/>
                     </Image.Effects>
-                </Image>
+                </FFImage:CachedImage>
             </StackLayout>
             <Label Text="First Name:" HorizontalOptions="FillAndExpand" TextColor="White"/>
             <Entry Placeholder="First name" HorizontalOptions="FillAndExpand" TextColor="White">

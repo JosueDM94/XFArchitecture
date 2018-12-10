@@ -45,7 +45,7 @@ namespace XFArchitecture.Behaviors
         public bool Validate()
         {
             bool isValid = true;    
-            foreach (var validator in Validators)
+            foreach (IValidator validator in Validators)
             {
                 bool result = validator.Check(view.GetType().GetProperty(PropertyName).GetValue(view));
                 isValid = isValid && result;
@@ -67,7 +67,7 @@ namespace XFArchitecture.Behaviors
             view = bindable as View;
             view.Unfocused += OnUnFocused;
             view.PropertyChanged += OnPropertyChanged;
-            if (Group != null)            
+            if (Group != null )            
                 Group.Add(this);
         }
 
