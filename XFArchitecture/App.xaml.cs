@@ -11,6 +11,8 @@ using XFArchitecture.Core.Services;
 using XFArchitecture.Services.General;
 using XFArchitecture.Core.Contracts.General;
 using XFArchitecture.Controls;
+using XFArchitecture.Core.ViewModels.Login;
+using System.Threading.Tasks;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace XFArchitecture
@@ -37,9 +39,10 @@ namespace XFArchitecture
             ServiceLocator.Instance.Build();
         }
 
-        private void InitializeNavigation()
+        private Task InitializeNavigation()
         {
-            MainPage = new LoginPage();
+            var navigationService = ServiceLocator.Instance.Resolve<INavigationService>();
+            return navigationService.RootNavigation<LoginViewModel>();
         }
 
         void RegisterDependencies()

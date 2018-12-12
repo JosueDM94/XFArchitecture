@@ -213,14 +213,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Services\Dependency\" />
-    <Folder Include="Views\" />
-    <Folder Include="Views\Splash\" />
-    <Folder Include="Resources\Fonts\" />
-    <Folder Include="Resources\Animations\" />
-    <Folder Include="Effects\" />
-    <Folder Include="Extensions\" />
+    <Folder Include="Models\" />
+    <Folder Include="Renderers\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Animations\anim_bus.json" />

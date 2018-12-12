@@ -13,9 +13,9 @@
                 </StackLayout.Effects>
                 <FFImage:CachedImage Source="ic_camera" Aspect="AspectFit" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"
                        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                    <Image.Effects>
+                    <FFImage:CachedImage.Effects>
                         <Effects:TintColorEffect TintColor="{StaticResource Gray700}"/>
-                    </Image.Effects>
+                    </FFImage:CachedImage.Effects>
                 </FFImage:CachedImage>
             </StackLayout>
             <Label Text="First Name:" HorizontalOptions="FillAndExpand" TextColor="White"/>
