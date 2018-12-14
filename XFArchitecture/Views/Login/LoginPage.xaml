@@ -5,10 +5,8 @@
     xmlns:Validators="clr-namespace:XFArchitecture.Validations"
     xmlns:Behaviors="clr-namespace:XFArchitecture.Behaviors"
     xmlns:Controls="clr-namespace:XFArchitecture.Controls"
-    xmlns:Service="clr-namespace:XFArchitecture.Services"
     xmlns:Effects="clr-namespace:XFArchitecture.Effects"
     xmlns:Base="clr-namespace:XFArchitecture.Views.Base"
-    Service:ViewModelLocator.AutoWireViewModel="True"
     x:Class="XFArchitecture.Views.Login.LoginPage">
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="-1" WidthRequest="-1" BackgroundColor="Transparent">
@@ -18,15 +16,20 @@
                 <StackLayout.Effects>
                     <Effects:BorderEffect BorderWidth="2" BorderRadius="10"/>
                 </StackLayout.Effects>
+                <StackLayout.Behaviors>
+                    <Behaviors:ValidationBehavior x:Name="Main" IsGroup="True"/>
+                </StackLayout.Behaviors>
                 <Label Text="Sign in" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                        HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="0,35,0,6"/>
-                <StackLayout Orientation="Horizontal" HeightRequest="48" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,4" Spacing="0" Padding="3,6" Effects:BorderEffect.BorderColor="{StaticResource DarkGray}">
+                <StackLayout Orientation="Horizontal" HeightRequest="48" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                             Margin="0,4" Spacing="0" Padding="3,6" Effects:BorderEffect.BorderColor="{StaticResource DarkGray}">
                     <StackLayout.Effects>
                         <Effects:BorderEffect BorderWidth="2" BorderRadius="10"/>
                     </StackLayout.Effects>
                     <StackLayout.Triggers>
                         <DataTrigger TargetType="StackLayout" Binding="{Binding Source={x:Reference LoginValidator}, Path=IsValid}" Value="true">
-                            <Setter Property="Effects:BorderEffect.BorderColor" Value="{Binding Source={x:Reference LoginValidator}, Path=ErrorStyle, Converter={StaticResource ColorError}, ConverterParameter=Color}"/>
+                            <Setter Property="Effects:BorderEffect.BorderColor" Value="{Binding Source={x:Reference LoginValidator}, 
+                                    Path=ErrorStyle, Converter={StaticResource ColorError}, ConverterParameter=Color}"/>
                         </DataTrigger>
                     </StackLayout.Triggers>
                     <Label Text="{StaticResource User}" FontFamily="{StaticResource FASolid}" TextColor="{StaticResource DarkGray}" FontSize="18" HeightRequest="24" WidthRequest="24"
@@ -37,7 +40,7 @@
                             <Effects:BorderEffect BorderWidth="0" BorderRadius="0"/>
                         </Entry.Effects>
                         <Entry.Behaviors>
-                            <Behaviors:ValidationBehavior x:Name="LoginValidator" PropertyName="Text">
+                            <Behaviors:ValidationBehavior x:Name="LoginValidator" Group="{x:Reference Main}" PropertyName="Text">
                                 <Behaviors:ValidationBehavior.Validators>
                                     <Validators:RequiredValidator/>
                                 </Behaviors:ValidationBehavior.Validators>
@@ -92,15 +95,14 @@
             <Lottie:AnimationView Animation="Animations/anim_login.json" Loop="True" AutoPlay="True" Speed="0.35" AbsoluteLayout.LayoutBounds="0.5,80,70,70" AbsoluteLayout.LayoutFlags="XProportional"/>
             <BoxView BackgroundColor="{StaticResource DarkBlue}" AbsoluteLayout.LayoutBounds="0.5,450,300,2" AbsoluteLayout.LayoutFlags="XProportional"/>
             <Label AbsoluteLayout.LayoutBounds="0.5,460,300,AutoSize" AbsoluteLayout.LayoutFlags="XProportional" HeightRequest="-1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding GoToRegisterCommand}"/>
+                </Label.GestureRecognizers>
                 <Label.FormattedText>
                     <FormattedString>
                         <FormattedString.Spans>
                             <Span Text="Don't have an account?" TextColor="Black" FontSize="13"/>
-                            <Span Text=" REGISTER HERE" TextColor="Black" FontAttributes="Bold" FontSize="14">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding GoToRegisterCommand}"/>
-                                </Span.GestureRecognizers>
-                            </Span>
+                            <Span Text=" REGISTER HERE" TextColor="Black" FontAttributes="Bold" FontSize="14"/>
                         </FormattedString.Spans>                        
                     </FormattedString>
                 </Label.FormattedText>

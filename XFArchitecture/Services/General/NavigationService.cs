@@ -8,12 +8,14 @@ using Xamarin.Forms;
 
 using XFArchitecture.Views.Home;
 using XFArchitecture.Views.Login;
+using XFArchitecture.Views.User.Register;
 
 using XFArchitecture.Core.Services;
 using XFArchitecture.Core.ViewModels;
 using XFArchitecture.Core.ViewModels.Home;
 using XFArchitecture.Core.ViewModels.Login;
 using XFArchitecture.Core.Contracts.General;
+using XFArchitecture.Core.ViewModels.User.Register;
 
 namespace XFArchitecture.Services.General
 {
@@ -50,7 +52,8 @@ namespace XFArchitecture.Services.General
         void CreatePageViewModelMappings()
         {
             mappings.Add(typeof(HomeViewModel), typeof(HomePage));
-            mappings.Add(typeof(LoginViewModel), typeof(LoginPage));            
+            mappings.Add(typeof(LoginViewModel), typeof(LoginPage));
+            mappings.Add(typeof(RegisterViewModel), typeof(RegisterPage));
         }
 
         public async Task PopToRootAsync(bool animated = true)
