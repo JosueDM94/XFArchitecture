@@ -1,7 +1,6 @@
 ﻿using UIKit;
 using Foundation;
 
-using SQLitePCL;
 using Xamarin.Forms;
 using Lottie.Forms.iOS.Renderers;
 using Xamarin.Forms.Platform.iOS;
@@ -19,11 +18,10 @@ namespace XFArchitecture.iOS
     {
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
-
             Forms.SetFlags("CollectionView_Experimental");
             Forms.Init();
 
-            Batteries_V2.Init();
+            SQLitePCL.Batteries_V2.Init();
             CachedImageRenderer.Init();
             AnimationViewRenderer.Init();
             CarouselView.FormsPlugin.iOS.CarouselViewRenderer.Init();

@@ -17,7 +17,11 @@
                     <Effects:BorderEffect BorderWidth="2" BorderRadius="10"/>
                 </StackLayout.Effects>
                 <StackLayout.Behaviors>
-                    <Behaviors:ValidationBehavior x:Name="Main" IsGroup="True"/>
+                    <Behaviors:ValidationBehavior x:Name="Main">
+                        <x:Arguments>
+                            <x:Boolean>true</x:Boolean>
+                        </x:Arguments>
+                    </Behaviors:ValidationBehavior>
                 </StackLayout.Behaviors>
                 <Label Text="Sign in" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                        HeightRequest="-1" WidthRequest="-1" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="0,35,0,6"/>

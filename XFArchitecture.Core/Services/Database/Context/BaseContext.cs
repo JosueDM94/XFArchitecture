@@ -25,6 +25,7 @@ namespace XFArchitecture.Core.Services.Database.Context
             Database.EnsureCreated();
             Database.Migrate();
             PragmaProperties();
+            EncryptionProperties();
         }
 
         public BaseContext(DbContextOptions options) : base(options) 
@@ -32,6 +33,7 @@ namespace XFArchitecture.Core.Services.Database.Context
             Database.EnsureCreated();
             Database.Migrate();
             PragmaProperties();
+            EncryptionProperties();
         }
 
         private void PragmaProperties()
@@ -49,14 +51,22 @@ namespace XFArchitecture.Core.Services.Database.Context
             }
         }
 
+        private void EncryptionProperties()
+        {
+            using (var connection = Database.GetDbConnection())
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "PRAGMA key = " + "jdiaz123";
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (DevicePlatform.iOS == DeviceInfo.Platform)
-                DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "..", "Library", Constants.DatabaseName);
-            else if (DevicePlatform.Android == DeviceInfo.Platform)
-                DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), Constants.DatabaseName);
-            else
-                throw new NotImplementedException("Platform not supported");
+            DatabasePath = GetDatabasePath();
             optionsBuilder.UseSqlite($"Filename={DatabasePath}");
         }
 
@@ -68,6 +78,16 @@ namespace XFArchitecture.Core.Services.Database.Context
             modelBuilder.Entity<CourseUser>().ToTable(nameof(CourseUser));
             modelBuilder.Entity<Attendance>().ToTable(nameof(Attendance));
             modelBuilder.Entity<Enrollment>().ToTable(nameof(Enrollment));
+        }
+
+        private string GetDatabasePath()
+        {            
+            if (DevicePlatform.iOS == DeviceInfo.Platform)
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "..", "Library", Constants.DatabaseName);
+            else if (DevicePlatform.Android == DeviceInfo.Platform)
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), Constants.DatabaseName);
+            else
+                throw new NotImplementedException("Platform not supported");
         }
     }
 }

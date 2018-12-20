@@ -12,13 +12,6 @@ namespace XFArchitecture.Behaviors
     public class ValidationBehavior : Behavior<View>
     {
         #region Bindable Properties
-        public static readonly BindableProperty IsGroupProperty = BindableProperty.Create(nameof(IsGroup), typeof(bool?), typeof(ValidationBehavior), null);
-        public bool? IsGroup
-        {
-            get { return (bool?)GetValue(IsGroupProperty); }
-            set { SetValue(IsGroupProperty, value); }
-        }
-
         public static readonly BindableProperty IsValidProperty = BindableProperty.Create(nameof(IsValid), typeof(bool), typeof(ValidationBehavior), false);
         public bool IsValid
         {
@@ -41,6 +34,7 @@ namespace XFArchitecture.Behaviors
         }
         #endregion
         private View view;
+        private bool IsGroup;
         private List<ValidationBehavior> validationBehaviors;
 
         public string PropertyName { get; set; }
@@ -50,6 +44,11 @@ namespace XFArchitecture.Behaviors
         public ValidationBehavior()
         {
             Validators = new ObservableCollection<IValidator>();
+        }
+
+        public ValidationBehavior(bool isGroup)
+        {
+            IsGroup = isGroup;
             validationBehaviors = new List<ValidationBehavior>();
         }
 
@@ -75,6 +74,7 @@ namespace XFArchitecture.Behaviors
         protected override void OnAttachedTo(BindableObject bindable)
         {
             base.OnAttachedTo(bindable);
+            if (IsGroup) return;
             view = bindable as View;
             view.Unfocused += OnUnFocused;
             view.PropertyChanged += OnPropertyChanged;
@@ -85,6 +85,7 @@ namespace XFArchitecture.Behaviors
         protected override void OnDetachingFrom(BindableObject bindable)
         {
             base.OnDetachingFrom(bindable);
+            if (IsGroup) return;
             view.Unfocused -= OnUnFocused;
             view.PropertyChanged -= OnPropertyChanged;
             if (Group != null)
@@ -102,15 +103,6 @@ namespace XFArchitecture.Behaviors
         {
             if (e.PropertyName == PropertyName)
                 Validate();
-        }
-
-        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            base.OnPropertyChanged(propertyName);
-            //if(propertyName == IsValidProperty.PropertyName && IsGroup.HasValue)
-            //{
-            //    if(IsGroup.Value)                    
-            //}                
         }
 
         public void Add(ValidationBehavior validationBehavior)
