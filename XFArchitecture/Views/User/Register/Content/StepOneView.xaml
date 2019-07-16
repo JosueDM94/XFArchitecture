@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"       
     xmlns:FFImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="XFArchitecture.Views.User.Register.Content.StepOneView"
@@ -53,10 +53,10 @@
                     </DatePicker.Behaviors>
                 </DatePicker>
                 <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Gender:"/>
-                <Button Grid.Row="1" Grid.Column="1" Text="{Binding Source={StaticResource Male}, StringFormat='{0} Male'}" FontSize="14" FontFamily="{StaticResource FASolid}" BorderColor="Transparent" BorderRadius="0" BorderWidth="0"
-                        BackgroundColor="{StaticResource DarkBlue}" Margin="0" Padding="0" HeightRequest="40" WidthRequest="70" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
-                <Button Grid.Row="1" Grid.Column="2" Text="{Binding Source={StaticResource Female}, StringFormat='{0} Female'}" FontSize="14" FontFamily="{StaticResource FASolid}" BorderColor="Transparent" BorderRadius="0" BorderWidth="0"
-                        BackgroundColor="{StaticResource DarkBlue}" Margin="0" Padding="0" HeightRequest="40" WidthRequest="70" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                <!---<Button Grid.Row="1" Grid.Column="1" Text="{Binding Source={StaticResource Male}, StringFormat='{0} Male'}" FontSize="14" FontFamily="{StaticResource FASolid}" BorderColor="Transparent" BorderRadius="0" BorderWidth="0"
+                        BackgroundColor="{StaticResource DarkBlue}" Margin="0" Padding="0" HeightRequest="40" WidthRequest="70" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>-->
+                <!--<Button Grid.Row="1" Grid.Column="2" Text="{Binding Source={StaticResource Female}, StringFormat='{0} Female'}" FontSize="14" FontFamily="{StaticResource FASolid}" BorderColor="Transparent" BorderRadius="0" BorderWidth="0"
+                        BackgroundColor="{StaticResource DarkBlue}" Margin="0" Padding="0" HeightRequest="40" WidthRequest="70" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>-->
             </Grid>
         </StackLayout>
     </ContentView.Content>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -105,7 +105,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>                
-                <Entry x:Name="txtSearch" Grid.Row="0" Grid.Column="0" Placeholder="{Binding Source={StaticResource Search}, StringFormat='{0} Type and Search'}" IsTextPredictionEnabled="false"
+                <!--<Entry x:Name="txtSearch" Grid.Row="0" Grid.Column="0" Placeholder="{Binding Source={StaticResource Search}, StringFormat='{0} Type and Search'}" IsTextPredictionEnabled="false"
                        Text="{Binding SearchText, Source={x:Reference Name=SearchBarContext}}" TextColor="White" FontSize="16" FontFamily="{StaticResource FASolid}" ReturnType="Search"
                        BackgroundColor="Transparent" HeightRequest="-1" WidthRequest="-1" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
                     <Entry.Effects>
@@ -118,7 +118,7 @@
                             </x:Arguments>
                         </Keyboard>
                     </Entry.Keyboard>
-                </Entry>
+                </Entry>-->
                 <Button Grid.Row="0" Grid.Column="1" Text="{StaticResource Close}" TextColor="Red" FontSize="18" FontFamily="{StaticResource FARegular}" BackgroundColor="Transparent" 
                         Clicked="BtnClose_Clicked" HeightRequest="44" WidthRequest="44" HorizontalOptions="End" VerticalOptions="End"/>
                 <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="End" HorizontalOptions="FillAndExpand" WidthRequest="-1" HeightRequest="1" BackgroundColor="White" Margin="0,0,8,4"/>
